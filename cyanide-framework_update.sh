@@ -132,7 +132,7 @@ banner() {
         figlet Cyanide-Framework
     fi
     if ! [ -x "$(command -v toilet)" ]; then
-        echo -e "\e[4;34m This Framework Was Created By \e[1;32mCyanide \e[0m"
+        echo -e "\e[4;34m This Framework Was Created By \e[1;32mCyanide & Dboidembla\e[0m"
     # else
     #     echo -e "\e[1;34mCreated By \e[1;34m"
     #     toilet -f mono12 -F border Cyanide-Framework
