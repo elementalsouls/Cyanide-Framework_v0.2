@@ -181,6 +181,95 @@ echo -e $yellow"[*] Thanks For Using Cyanide-Framework  :)"
 echo ""
 exit
 }
+# encoder
+generator(){
+  choice_y/n(){
+    echo "Do you want to generate another cipher?"
+    echo ""
+    read -p "[ → ] Enter choice [Y/n]> : " number_option
+    echo ""
+    case $number_option in
+    Y|y)
+    sleep 1
+    clear
+    generator
+    ;;
+    N|n)
+    echo -e $green "!! Taking you to the main menu !!"
+    sleep 1.5
+    main
+
+    ;;
+    *)
+    echo  -e $red "!!  Wrong choice [ X ] Try again !!"
+    sleep 1.5
+    main
+    esac
+    }
+  echo -e $red "[ 1  ] Base64"
+  echo -e $red "[ 2  ] MD5"
+  echo -e $red "[ 3  ] ROT5"
+  echo -e $red "[ 4  ] ROT13"
+  echo -e $red "[ 5  ] SHA256"
+  echo -e $red "[ 6  ] SHA384"
+  echo -e $red "[ 7  ] SHA512"
+  echo -e $red "[ 8  ] Vigenere"
+  echo ""
+  echo -e $CyanF "[ 99 ] Back" 
+  echo -e $red    "..............................."
+  echo -e $yellow "Please select your option:"
+  read -p "[ → ] Enter choice> : " number_option
+  if [ $number_option -eq 1 ]; then
+    python3 tola_atom/encoders/base64_file.py
+    sleep 1.5
+    echo ""
+
+    choice_y/n
+
+  elif [ $number_option -eq 2 ]; then
+    python3 tola_atom/encoders/md5_file.py
+    sleep 1.5
+    echo ""
+
+    choice_y/n
+
+  elif [ $number_option -eq 3 ]; then
+    python3 tola_atom/encoders/rot5_file.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 4 ]; then
+    python3 tola_atom/encoders/rot13_file.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 5 ]; then
+    python3 tola_atom/encoders/sha256_file.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 6 ]; then
+    python3 tola_atom/encoders/sha384_file.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 7 ]; then
+    python3 tola_atom/encoders/sha512_file.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 8 ]; then
+    python3 tola_atom/encoders/vigenere_file.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 99 ]; then
+    clear
+    sleep1
+    main
+
+  else
+    echo  -e $red "!!  Wrong choice [ X ] Try again !!"
+    sleep 1.5
+    clear
+    generator
+
+  fi
+}
   # Payload Generator
   payload_generator(){
     echo -e $red " 1. Android               3. Windows"
@@ -348,6 +437,7 @@ exit
 
 banner
 main(){
+  clear
 
   echo -e $red "╔────────────────────────────────────────────────╗"
   echo -e $red "|            Cyanide Framework v0.2              |"
@@ -472,8 +562,10 @@ case $Number in
   ;;
 
   Generator|generator|G|g|8)
-  python3 md5generator.py
-    exit
+  clear
+  sleep 0.5
+  generator
+
   ;;
 
   Cracker|cracker|C|c|9)
