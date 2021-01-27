@@ -215,10 +215,12 @@ generator(){
   echo -e $red "[ 7  ] SHA512"
   echo -e $red "[ 8  ] Vigenere"
   echo ""
-  echo -e $CyanF "[ 99 ] Back" 
+  echo -e $CyanF "[ 99 ] Return to main menu" 
   echo -e $red    "..............................."
-  echo -e $yellow "Please select your option:"
-  read -p "[ → ] Enter choice> : " number_option
+  echo -e $yellow " Please select your option:"
+  echo ""
+  read -p " [ → ] Enter choice> : " number_option
+  echo ""
   if [ $number_option -eq 1 ]; then
     python3 tola_atom/encoders/base64_file.py
     sleep 1.5
