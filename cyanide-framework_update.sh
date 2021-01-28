@@ -53,10 +53,14 @@ pwd=$(pwd)
 dlhost=$(hostname -I)
 
 # Root Permission
-if [[ "$(whoami)" != root ]]; then
-echo "You are not a root User "
-exit 1
+if ! [ $(id -u) = 0 ]; then
+   echo "You are not a not root User!"
+   exit 1
 fi
+# if [[ "$(whoami)" != root ]]; then
+# echo "You are not a root User "
+# exit 1
+# fi
 #check dependencies existence
 echo -e $blue "" 
 echo "(°_o) Checking dependencies configuration (°_o)" 
@@ -65,7 +69,7 @@ echo "                                       "
 # check if metasploit-framework is installed
 which msfconsole > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $green "[ ✔ ] Metasploit-Framework..............${LighGreenF}[ found ]"
+echo -e $LighGreenF "[ ✔ ] Metasploit-Framework..............${LighGreenF}[ found ]"
 which msfconsole > /dev/null 2>&1
 sleep 2
 else
@@ -79,7 +83,7 @@ fi
 #check if xterm is installed
 which xterm > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $green "[ ✔ ] Xterm.............................${LighGreenF}[ found ]"
+echo -e $LighGreenF "[ ✔ ] Xterm.............................${LighGreenF}[ found ]"
 which xterm > /dev/null 2>&1
 sleep 2
 else
@@ -88,7 +92,7 @@ echo -e $red "[ X ] xterm -> ${RedF}not found! "
 sleep 2
 echo -e $yellow "[ ! ] Installing Xterm "
 sleep 2
-echo -e $green ""
+echo -e $LighGreenF ""
 sudo apt-get install xterm -y
 clear
 echo -e $blue "[ ✔ ] Done installing .... "
@@ -97,7 +101,7 @@ fi
 #check if figlet is installed
 which figlet > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $green "[ ✔ ] Figlet............................${LighGreenF}[ found ]"
+echo -e $LighGreenF "[ ✔ ] Figlet............................${LighGreenF}[ found ]"
 which figlet > /dev/null 2>&1
 sleep 2
 else
@@ -106,7 +110,7 @@ echo -e $red "[ X ] Figlet -> ${RedF}not found! "
 sleep 2
 echo -e $yellow "[ ! ] Installing Figlet "
 sleep 2
-echo -e $green ""
+echo -e $LighGreenF ""
 sudo apt-get install figlet -y
 clear
 echo -e $blue "[ ✔ ] Done installing .... "
@@ -118,21 +122,22 @@ check_txt=/usr/share/wordlists/rockyou.txt
 
 if test -f "$check_zip"; then
   echo -e $yellow "[ ! ] Unzipping Rockyou "
-  echo -e $green "[ ✔ ] Rockyou Zip.......................${LighGreenF}[ found ]"
+  echo -e $LighGreenF "[ ✔ ] Rockyou Zip.......................${LighGreenF}[ found ]"
   sleep 1
   gunzip /usr/share/wordlists/rockyou.txt.gz
   sleep 2
 elif test -f "$check_txt"; then
-  echo -e $green "[ ✔ ] Rockyou...........................${LighGreenF}[ found ]"
+  echo -e $LighGreenF "[ ✔ ] Rockyou...........................${LighGreenF}[ found ]"
   sleep 2
 else
   echo -e $red "[ X ] Rockyou -> ${RedF}not found! "
   echo -e $yellow "[ ! ] Installing Rockyou "
+  echo -e $blue "[ ✔ ] Done installing .... "
   sleep 1
 
   xterm -T "INSTALLING ROCKYOU" -fa monaco -fs 10 -bg red -e "cd /usr/share/wordlists; wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt"
   sleep 2
-  echo -e $green "[ ✔ ] Rockyou.......................${LighGreenF}[ installed ]"
+  echo -e $LighGreenF "[ ✔ ] Rockyou...........................${LighGreenF}[ installed ]"
   sleep 2
 fi
 
@@ -435,39 +440,51 @@ generator(){
      echo -e $RedF "[ X ]....................................[ X ]"
     fi
 }
-
-
-banner
 main(){
   clear
+  sleep 2
+  banner
 
-  echo -e $red "╔────────────────────────────────────────────────╗"
-  echo -e $red "|            Cyanide Framework v0.2              |"
-  echo -e $red "|  [ x ]   Tool For Penetration Testing   [ x ]  |"
-  echo -e $red "|              watch your back                   |"           
-  echo -e $red "┖────────────────────────────────────────────────┙"
 
-  echo -e $red "[ 1  ] Network Based Attacks"
-  echo -e $red "[ 2  ] Web Based Attacks"
-  echo -e $red "[ 3  ] Keylogger"
-  echo -e $red "[ 4  ] Payload Genetator"
-  echo -e $red "[ 5  ] LaZagne"
-  echo -e $red "[ 6  ] Infectious Media Genetator"
-  echo -e $red "[ 7  ] TBomb"
-  echo -e $red "[ 8  ] Hash & Cipher Generator"
-  echo -e $red "[ 9  ] Hash & Cipher Decoder"
-  echo -e $red "[ 10 ] IP Locator"
-  echo -e $red "[ 99 ] Quit" 
-  echo -e $red    "..............................."
-  echo -e $yellow "Please select your option:"
+echo -e $red "             ..,;:ccccccc:;..."
+echo -e $red "          ..,clllc:;;;;;;:cllc,."
+echo -e $red "         .,cllc,..............';;'."
+echo -e $red "        .;lol;......${white}_______${red}....;lol;."
+echo -e $red "       .,lol;......${white}/ _____/${red}.....;lol;..  "
+echo -e $red "       .coo.......${white}/ /${red}.............coo"            
+echo -e $red "      .'lol,.....${white}/ /${red}............'lol,."
+echo -e $red "      .,lol,....${white}/ /_____${red}........,lol,."
+echo -e $red "      .,lol,....${white}\______/${red}.......,lol,."
+echo -e $red "       .:ooc'.................:ooc'"
+echo -e $red "        .'cllc'............''cllc."
+echo -e $white "╔──────────────────────────────────────────╗"
+echo -e $red "|        Cyanide Framework v0.2            |"
+echo -e $white "[ x ]   Tool For Penetration Testing   [ x ]"
+echo -e $red" |     Made By: Cyanide and Dboidembla      |"
+echo -e $white "┖──────────────────────────────────────────┙"
+  
+  echo -e $white "    [ 1  ] Network Based Attacks"
+  echo -e $red "    [ 2  ] Web Based Attacks"
+  echo -e $white "    [ 3  ] Keylogger"
+  echo -e $red "    [ 4  ] Payload Genetator"
+  echo -e $white "    [ 5  ] LaZagne"
+  echo -e $red "    [ 6  ] Infectious Media Genetator"
+  echo -e $white "    [ 7  ] TBomb"
+  echo -e $red "    [ 8  ] Hash & Cipher Generator"
+  echo -e $white "    [ 9  ] Hash & Cipher Decoder"
+  echo -e $red "    [ 10 ] IP Locator"
+  echo ""
+  echo -e $white "    [ 99 ] Quit" 
+  echo -e $red    "    ..............................."
+  echo -e $white "    Please select your option:"
 user_input
 cases_of_framework
 }
 #Checking User Input.
 user_input(){
 re='[a-zA-Z]'
- echo -e $GreenF "..............................."
- read -p "[ → ] Enter Choice> : " Number
+ echo -e $red "    ..............................."
+ read -p  "    [ → ] Enter Choice> : " Number
  if [ $Number -gt 11 ] || [ $Number -lt 1 ] || [[ "$Number" =~ $re ]] ;
   then
    if [ $Number == 99 ];
@@ -493,6 +510,7 @@ re='[a-zA-Z]'
 cases_of_framework(){
 case $Number in 
  Network|network|N|n|1) 
+  clear
   echo -e $GreenF "[*]....................................[*]"
   echo -e $blue " [ 1 ] Mac_changer"
   echo -e $blue " [ 2 ] Wireless_hacking"
@@ -501,7 +519,7 @@ case $Number in
   echo -e $red  " [ 99 ] Return to main menu"
   echo -e $GreenF "[ ✔ ]....................................[ ✔ ]"
   echo -e $red    "..............................."
-  echo -e $yellow "Select your option:"
+  echo -e $white "Select your option:"
 
 #Checking User Input
  echo -e $GreenF "..............................."
