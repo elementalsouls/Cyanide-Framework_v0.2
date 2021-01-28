@@ -1,4 +1,11 @@
  #!/usr/bin/env bash
+ # 
+ # Cyanide-Framework . version 0.2
+ # This Framework is used for penetration testing for android and all other plateforms.
+ #                              
+ #                            Created By Sachin Sharma(Cyanide) .
+
+ # Special Thanks to : Amritya Vaibhav Dembla(Dboidembla)
 
 resize -s 80 100 > /dev/null 
 
@@ -484,7 +491,7 @@ cases_of_framework
 user_input(){
 re='[a-zA-Z]'
  echo -e $red "    ..............................."
- read -p  "    [ → ] Enter Choice> : " Number
+ read -p  "     [ → ] Enter Choice> : " Number
  if [ $Number -gt 11 ] || [ $Number -lt 1 ] || [[ "$Number" =~ $re ]] ;
   then
    if [ $Number == 99 ];
@@ -597,12 +604,13 @@ case $Number in
   python3 phoneTracker.py
   ;;
 
-  99)  echo -e $red "      Quiting"
+  99)  echo ""
+       echo -e $red "               Quiting"
        sleep 2
        echo ""
-       echo -e $yellow "   Thanks for using Cyanide-Framework"
+       echo -e $white "    Thanks for using Cyanide-Framework"
        echo ""
-       echo -e $yellow "   Good Bye !!"  
+       echo -e $red "    Good Bye !!"  
                 # apache_svc_stop
                 # postgresql_stop
                 echo
