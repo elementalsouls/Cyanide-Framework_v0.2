@@ -3,7 +3,7 @@
  # Cyanide-Framework . version 0.2
  # This Framework is used for penetration testing for android and all other plateforms.
  #                              
- #                            Created By Sachin Sharma(Cyanide) .
+ #                            [[Created By Sachin Sharma(Cyanide)]]
 
  # Special Thanks to : Amritya Vaibhav Dembla(Dboidembla)
 
