@@ -147,6 +147,79 @@ else
   echo -e $LighGreenF "[ ✔ ] Rockyou...........................${LighGreenF}[ installed ]"
   sleep 2
 fi
+#check if zenity is installed
+which zenity > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+echo -e $LighGreenF "[ ✔ ] Zenity............................${LighGreenF}[ found ]"
+which zenity > /dev/null 2>&1
+sleep 2
+else
+echo ""
+echo -e $red "[ X ] Zenity -> ${RedF}not found! "
+sleep 2
+echo -e $yellow "[ ! ] Installing Zenity "
+sleep 2
+echo -e $green ""
+sudo apt-get install zenity -y
+clear
+echo -e $blue "[ ✔ ] Done installing .... "
+which zenity > /dev/null 2>&1
+fi
+#Check for Android Asset Packaging Tool
+which aapt > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+echo -e $LighGreenF "[ ✔ ] Aapt..............................${LighGreenF}[ found ]"
+which aapt > /dev/null 2>&1
+sleep 2
+else
+echo ""
+echo -e $red "[ X ] Aapt -> ${RedF}not found! "
+sleep 2
+echo -e $yellow "[ ! ] Installing Aapt "
+sleep 2
+echo -e $green ""
+sudo apt-get install aapt -y
+sudo apt-get install android-framework-res -y
+clear
+echo -e $blue "[ ✔ ] Done installing .... "
+which aapt > /dev/null 2>&1
+fi
+#Check for Apktool Reverse Engineering
+which apktool > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+echo -e $LighGreenF "[ ✔ ] Apktool...........................${LighGreenF}[ found ]"
+which aapt > /dev/null 2>&1
+sleep 2
+else
+echo ""
+echo -e $red "[ X ] Apktool -> ${RedF}not found! "
+sleep 2
+echo -e $yellow "[ ! ] Installing Apktool "
+sleep 2
+echo -e $green ""
+sudo apt-get install apktool -y
+clear
+echo -e $blue "[ ✔ ] Done installing .... "
+which apktool > /dev/null 2>&1
+fi
+#check for zipalign
+which zipalign > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+echo -e $LighGreenF "[ ✔ ] Zipalign..........................${LighGreenF}[ found ]"
+which aapt > /dev/null 2>&1
+sleep 2
+else
+echo ""
+echo -e $red "[ X ] Zipalign -> ${RedF}not found! "
+sleep 2
+echo -e $yellow "[ ! ] Installing Zipalign "
+sleep 2
+echo -e $green ""
+sudo apt-get install zipalign -y
+clear
+echo -e $blue "[ ✔ ] Done installing .... "
+which zipalign > /dev/null 2>&1
+fi
 
 
 # To start service for posrgresql
@@ -174,9 +247,9 @@ banner() {
     #     echo -e "\e[1;34mCreated By \e[1;34m"
     #     toilet -f mono12 -F border Cyanide-Framework
     fi
-    echo -e "\e[1;34m For Any Queries Join Me!!!\e[0m"
-    echo -e "\e[1;32m Telegram : https://bit.ly/365XS2N \e[0m"
-    echo -e "\e[4;32m YouTube  : https://bit.ly/35YqryS \e[0m"
+    echo -e $red "   For Any Queries Join Me!!!\e[0m"
+    echo -e $white  "Telegram : https://bit.ly/365XS2N \e[0m"
+    echo -e $white  "YouTube  : https://bit.ly/35YqryS \e[0m"
     echo " "
 
 }
@@ -449,7 +522,7 @@ generator(){
 }
 main(){
   clear
-  sleep 2
+  sleep 0.25
   banner
 
 
@@ -466,7 +539,7 @@ echo -e $red "       .:ooc'.................:ooc'"
 echo -e $red "        .'cllc'............''cllc."
 echo -e $white "╔──────────────────────────────────────────╗"
 echo -e $red "|        Cyanide Framework v0.2            |"
-echo -e $white "[ x ]   Tool For Penetration Testing   [ x ]"
+echo -e $white"【X】   Tool For Penetration Testing     【X】"
 echo -e $red" |     Made By: Cyanide and Dboidembla      |"
 echo -e $white "┖──────────────────────────────────────────┙"
   
@@ -481,82 +554,74 @@ echo -e $white "┖────────────────────�
   echo -e $white "    [ 9  ] Hash & Cipher Decoder"
   echo -e $red "    [ 10 ] IP Locator"
   echo ""
-  echo -e $white "    [ 99 ] Quit" 
-  echo -e $red    "    ..............................."
-  echo -e $white "    Please select your option:"
-user_input
+  echo -e $white "    [ q ] Quit" 
+
 cases_of_framework
 }
-#Checking User Input.
-user_input(){
-re='[a-zA-Z]'
- echo -e $red "    ..............................."
- read -p  "     [ → ] Enter Choice> : " Number
- if [ $Number -gt 11 ] || [ $Number -lt 1 ] || [[ "$Number" =~ $re ]] ;
-  then
-   if [ $Number == 99 ];
-   then
-      cases_of_framework
-   else
-    echo -e $red    "[ x ].......................................[ x ]"
-    echo -e $RedF "Oops! You have selected an invalid option."
-    echo ""
-    echo -e $yellow "[*] Please select a valid option :)"
-    echo ""
-    sleep 2
-    # exit 1
-    clear
-    main
-   fi
- else
-   cases_of_framework
-
- fi
-}
-# cases of framework from 1-9
-cases_of_framework(){
-case $Number in 
- Network|network|N|n|1) 
-  clear
-  echo -e $GreenF "[*]....................................[*]"
-  echo -e $blue " [ 1 ] Mac_changer"
-  echo -e $blue " [ 2 ] Wireless_hacking"
-  echo -e $blue " [ 3 ] TBomb"
+# function of option 1(Network Based)
+cases_of_networks(){
+  echo -e $red " 【X】....................................【X】"
+  echo -e $white " [ 1 ] Mac_changer"
+  echo -e $red " [ 2 ] Wireless_hacking"
+  echo -e $white " [ 3 ] TBomb"
   echo ""
   echo -e $red  " [ 99 ] Return to main menu"
-  echo -e $GreenF "[ ✔ ]....................................[ ✔ ]"
-  echo -e $red    "..............................."
-  echo -e $white "Select your option:"
-
-#Checking User Input
- echo -e $GreenF "..............................."
- read -p "[ → ] Enter choice> : " number_option
- if [ $number_option -gt 3 ] || [ $number_option -lt 1 ] || [[ "$number_option" =~ $re ]];
-  then
-    if [ $number_option -eq 99 ];
-    then
-      main
-    else
-      echo -e $red    "[ x ].................................................[ x ]"
-      echo -e $RedF "     [ X ]         You choose invalid option.          [ X ]"
-      echo -e $red    "[ x ].................................................[ x ]"
-      echo -e $RedF "     [ X ]              Please try again                 [ X ]"
-      echo -e $red    "[ x ].................................................[ x ]"
-   # echo -e $yellow "[*] Thanks For using Cyanide-Framework  :)"
-      sleep 2
-      clear
-      cases_of_framework
-   fi
- else
+  echo
+  read -p  "  [ → ] Enter Choice> : " number_option
   case $number_option in
     1)
     python3 mac_changer.py
     exit
     ;;
+    99) clear
+        sleep 1
+        main
+        ;;
+    *) echo -e $red "【X】 Invalid option, please write a valid number【X】"
+       echo
+       sleep 1
+       clear
+       cases_of_networks
+    ;;
   esac
+}
+# cases of option 6(infectious)
+cases_of_infectious(){
+  echo -e $white " 【X】....................................【X】"
+  echo -e $red " [ 1 ] Android"
+  echo -e $white " [ 2 ] "
+  echo -e $red " [ 3 ] "
+  echo ""
+  echo -e $white  " [ 99 ] Return to main menu"
+  read -p "  [ → ] Enter choice> : " number_option
+ case $number_option in
+    1)
+    clear
+    ./evil-droid.sh
+    ;;
+    99) clear
+        sleep 0.25
+        main
+    ;;
 
+    *) echo -e $red "【X】 Invalid option, please write a valid number【X】"
+       echo
+       sleep 1
+       clear
+       cases_of_infectious
+    ;;
+  esac
+}
+# cases of framework from 1-9
+cases_of_framework(){
+  echo -e $red "    ..............................."
+  read -p  "     [ → ] Enter Choice > : " Number
+case $Number in 
+ Network|network|N|n|1) 
+  clear
+  sleep 0.25
+  cases_of_networks
 
- fi
   ;;
 
   Web|web|W|w|2)
@@ -581,6 +646,10 @@ case $Number in
 
   Infectious|infectious|6)
   
+    clear
+    sleep 0.25
+    cases_of_infectious
+
   ;;
 
   TBomb|tbomb|T|t|7)
@@ -600,22 +669,30 @@ case $Number in
     exit
   ;;
  
-  IP|ip|10)
-  python3 phoneTracker.py
-  ;;
+  IP|ip|10)  python3 phoneTracker.py
+              ;;
 
-  99)  echo ""
+  q)  echo ""
        echo -e $red "               Quiting"
        sleep 2
        echo ""
        echo -e $white "    Thanks for using Cyanide-Framework"
        echo ""
        echo -e $red "    Good Bye !!"  
-                # apache_svc_stop
-                # postgresql_stop
-                echo
-                exit 0 
-                ;;
+       apache_svc_stop
+       postgresql_stop
+       echo
+       exit 0 
+       ;;
+  *)  echo -e $red    "【X】.......................................【X】"
+      echo -e $RedF "Oops! You have selected an invalid option."
+      echo ""
+      echo -e $yellow "[*] Please select a valid option :)"
+      echo ""
+      sleep 2
+      clear
+      main
+      ;;
 
 esac
 }
