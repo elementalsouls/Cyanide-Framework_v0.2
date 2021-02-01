@@ -3,7 +3,7 @@
  # Cyanide-Framework . version 0.2
  # This Framework is used for penetration testing for android and all other plateforms.
  #                              
- #                            [[Created By Sachin Sharma(Cyanide)]]
+ #                            Created By Sachin Sharma(Cyanide) .
 
  # Special Thanks to : Amritya Vaibhav Dembla(Dboidembla)
 
@@ -28,8 +28,7 @@ BlueF="${Escape}[34m";
 CyanF="${Escape}[36m";
 Reset="${Escape}[0m";
 # Check root
-[[ `id -u` -eq 0 ]] > /dev/null 2>&1 || { echo  $red "You must be root to run the script"; echo ; exit 1; }
-clear
+# [[ `id -u` -eq 0 ]] > /dev/null 2>&1 || { echo  $red "You must be root to run the script"; echo ; exit 1; }
 # check internet 
 function checkinternet() 
 {
@@ -47,28 +46,28 @@ function checkinternet()
     echo -e $yellow " Checking For Internet: ${LighGreenF}CONNECTED"
   fi
 }
-checkinternet
 
 #check OS
+check_os(){
 echo -e $blue
 sudo cat /etc/issue.net
-
-sleep 0.05
+}
 # Check current directory
 pwd=$(pwd)
 
 dlhost=$(hostname -I)
 
 # Root Permission
-if ! [ $(id -u) = 0 ]; then
-   echo "You are not a not root User!"
-   exit 1
-fi
+# if ! [ $(id -u) = 0 ]; then
+   # echo "You are not a not root User!"
+   # exit 1
+# fi
 # if [[ "$(whoami)" != root ]]; then
 # echo "You are not a root User "
 # exit 1
 # fi
 #check dependencies existence
+check_dependencies(){
 echo -e $blue "" 
 echo "(°_o) Checking dependencies configuration (°_o)" 
 echo "                                       " 
@@ -220,7 +219,7 @@ clear
 echo -e $blue "[ ✔ ] Done installing .... "
 which zipalign > /dev/null 2>&1
 fi
-
+}
 
 # To start service for posrgresql
 function postgresql_start()
@@ -253,6 +252,7 @@ banner() {
     echo " "
 
 }
+
 # Detect ctrl+c
 trap ctrl_c INT
 ctrl_c() {
@@ -266,7 +266,7 @@ echo -e $yellow"[*] Thanks For Using Cyanide-Framework  :)"
 echo ""
 exit
 }
-# encoder
+#hash encoder
 generator(){
   choice_y/n(){
     echo "Do you want to generate another cipher?"
@@ -357,6 +357,103 @@ generator(){
 
   fi
 }
+#decoder main
+decoder_main(){
+  echo -e $red "[ 1  ] Base64"
+  echo -e $white "[ 2  ] MD5"
+  echo -e $red "[ 3  ] sha1"
+  echo -e $white "[ 4  ] ROT13"
+  echo -e $red "[ 5  ] SHA256"
+  echo -e $white "[ 6  ] SHA384"
+  echo -e $red "[ 7  ] SHA512"
+  echo -e $white "[ 8  ] Vigenere"
+  echo ""
+  echo -e $whiteF "[ 99 ] Return to main menu" 
+  echo -e $red    "..............................."
+  echo -e $white " Please select your option:"
+  echo ""
+  read -p " [ → ] Enter choice> : " number_option
+  echo ""
+  if [ $number_option -eq 1 ]; then
+    python3 tola_atom/decoders/base64_dec.py
+    sleep 1.5
+    echo ""
+
+    choice_y/n
+
+  elif [ $number_option -eq 2 ]; then
+    python3 tola_atom/decoders/md5_dec.py
+    sleep 1.5
+    echo ""
+
+    choice_y/n
+
+  elif [ $number_option -eq 3 ]; then
+    python3 tola_atom/decoders/sha1_dec.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 4 ]; then
+    python3 tola_atom/decoders/rot13_dec.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 5 ]; then
+    python3 tola_atom/decoders/sha256_dec.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 6 ]; then
+    python3 tola_atom/decoders/sha384_dec.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 7 ]; then
+    python3 tola_atom/decoders/sha512_dec.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 8 ]; then
+    python3 tola_atom/decoders/vigenere_file.py
+    sleep 1.5
+    choice_y/n
+  elif [ $number_option -eq 99 ]; then
+    clear
+    sleep1
+    main
+
+  else
+    echo  -e $red "!!  Wrong choice [ X ] Try again !!"
+    sleep 1.5
+    clear
+    generator
+
+  fi
+}
+
+
+
+
+# hash & cypher decoder
+hash_decoder(){
+  echo -e $red "Do your want to check your cipher type?"
+    echo ""
+    read -p "[ → ] Enter choice [Y/n]> : " number_option
+    echo ""
+    case $number_option in
+    Y|y)
+    sleep 0.25
+    clear
+    python3 hashid.py
+    ;;
+    N|n)
+    echo -e $white "!! Opening Decoders !!"
+    sleep 0.5
+    decoder_main
+
+    ;;
+    *)
+    echo  -e $red "!!  Wrong choice [ X ] Try again !!"
+    sleep 1.5
+    main
+    esac
+    }
+
   # Payload Generator
   payload_generator(){
     echo -e $red " 1. Android               3. Windows"
@@ -521,9 +618,12 @@ generator(){
     fi
 }
 main(){
-  clear
-  sleep 0.25
-  banner
+  # clear
+  # checkinternet
+  # check_os
+  # check_dependencies
+  # sleep 0.25
+  # banner
 
 
 echo -e $red "             ..,;:ccccccc:;..."
@@ -665,7 +765,9 @@ case $Number in
   ;;
 
   Cracker|cracker|C|c|9)
-  python3 md5cracker.py
+  clear
+  sleep 0.25
+  hash_decoder
     exit
   ;;
  
@@ -696,4 +798,4 @@ case $Number in
 
 esac
 }
-main
+# main
