@@ -35,7 +35,7 @@ function checkinternet()
   ping -c 1 google.com > /dev/null 2>&1
   if [[ "$?" != 0 ]]
   then
-    echo -e $yellow " Checking For Internet: ${RedF}FAILED"
+    echo -e $red " Checking For Internet: ${RedF}FAILED"
     echo
     echo -e $red "This Script Needs An Active Internet Connection"
     echo
@@ -43,14 +43,15 @@ function checkinternet()
     echo && sleep 2
     exit
   else
-    echo -e $yellow " Checking For Internet: ${LighGreenF}CONNECTED"
+    echo -e $red " Checking For Internet: ${white}CONNECTED"
   fi
 }
 
 #check OS
 check_os(){
-echo -e $blue
+echo -e $red
 sudo cat /etc/issue.net
+# sudo cat /etc/issue.net
 }
 # Check current directory
 pwd=$(pwd)
@@ -68,16 +69,16 @@ dlhost=$(hostname -I)
 # fi
 #check dependencies existence
 check_dependencies(){
-echo -e $blue "" 
-echo "(°_o) Checking dependencies configuration (°_o)" 
+echo -e $white "" 
+echo " (°_o)  Checking dependencies configuration  (°_o)" 
 echo "                                       " 
 
 # check if metasploit-framework is installed
 which msfconsole > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $LighGreenF "[ ✔ ] Metasploit-Framework..............${LighGreenF}[ found ]"
+echo -e $red "[ ✔ ] Metasploit-Framework..............${white}[ found ]"
 which msfconsole > /dev/null 2>&1
-sleep 2
+sleep 1
 else
 echo -e $red "[ X ] Metasploit-Framework  -> ${RedF}not found "
 echo -e $yellow "[ ! ] Installing Metasploit-Framework "
@@ -89,9 +90,9 @@ fi
 #check if xterm is installed
 which xterm > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $LighGreenF "[ ✔ ] Xterm.............................${LighGreenF}[ found ]"
+echo -e $white "[ ✔ ] Xterm.............................${red}[ found ]"
 which xterm > /dev/null 2>&1
-sleep 2
+sleep 1
 else
 echo ""
 echo -e $red "[ X ] xterm -> ${RedF}not found! "
@@ -107,9 +108,9 @@ fi
 #check if figlet is installed
 which figlet > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $LighGreenF "[ ✔ ] Figlet............................${LighGreenF}[ found ]"
+echo -e $red "[ ✔ ] Figlet............................${white}[ found ]"
 which figlet > /dev/null 2>&1
-sleep 2
+sleep 1
 else
 echo ""
 echo -e $red "[ X ] Figlet -> ${RedF}not found! "
@@ -127,14 +128,14 @@ check_zip=/usr/share/wordlists/rockyou.txt.gz
 check_txt=/usr/share/wordlists/rockyou.txt
 
 if test -f "$check_zip"; then
-  echo -e $yellow "[ ! ] Unzipping Rockyou "
-  echo -e $LighGreenF "[ ✔ ] Rockyou Zip.......................${LighGreenF}[ found ]"
+  echo -e $white "[ ! ] Unzipping Rockyou "
+  echo -e $white "[ ✔ ] Rockyou Zip.......................${red}[ found ]"
   sleep 1
   gunzip /usr/share/wordlists/rockyou.txt.gz
   sleep 2
 elif test -f "$check_txt"; then
-  echo -e $LighGreenF "[ ✔ ] Rockyou...........................${LighGreenF}[ found ]"
-  sleep 2
+  echo -e $white "[ ✔ ] Rockyou...........................${red}[ found ]"
+  sleep 1
 else
   echo -e $red "[ X ] Rockyou -> ${RedF}not found! "
   echo -e $yellow "[ ! ] Installing Rockyou "
@@ -142,22 +143,22 @@ else
   sleep 1
 
   xterm -T "INSTALLING ROCKYOU" -fa monaco -fs 10 -bg red -e "cd /usr/share/wordlists; wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt"
-  sleep 2
-  echo -e $LighGreenF "[ ✔ ] Rockyou...........................${LighGreenF}[ installed ]"
-  sleep 2
+  sleep 1
+  echo -e $white "[ ✔ ] Rockyou...........................${red}[ installed ]"
+  sleep 1
 fi
 #check if zenity is installed
 which zenity > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $LighGreenF "[ ✔ ] Zenity............................${LighGreenF}[ found ]"
+echo -e $red "[ ✔ ] Zenity............................${white}[ found ]"
 which zenity > /dev/null 2>&1
-sleep 2
+sleep 1
 else
 echo ""
 echo -e $red "[ X ] Zenity -> ${RedF}not found! "
-sleep 2
+sleep 1
 echo -e $yellow "[ ! ] Installing Zenity "
-sleep 2
+sleep 1
 echo -e $green ""
 sudo apt-get install zenity -y
 clear
@@ -167,15 +168,15 @@ fi
 #Check for Android Asset Packaging Tool
 which aapt > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $LighGreenF "[ ✔ ] Aapt..............................${LighGreenF}[ found ]"
+echo -e $white "[ ✔ ] Aapt..............................${red}[ found ]"
 which aapt > /dev/null 2>&1
-sleep 2
+sleep 1
 else
 echo ""
 echo -e $red "[ X ] Aapt -> ${RedF}not found! "
-sleep 2
+sleep 1
 echo -e $yellow "[ ! ] Installing Aapt "
-sleep 2
+sleep 1
 echo -e $green ""
 sudo apt-get install aapt -y
 sudo apt-get install android-framework-res -y
@@ -186,15 +187,15 @@ fi
 #Check for Apktool Reverse Engineering
 which apktool > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $LighGreenF "[ ✔ ] Apktool...........................${LighGreenF}[ found ]"
+echo -e $red "[ ✔ ] Apktool...........................${white}[ found ]"
 which aapt > /dev/null 2>&1
-sleep 2
+sleep 1
 else
 echo ""
 echo -e $red "[ X ] Apktool -> ${RedF}not found! "
-sleep 2
+sleep 1
 echo -e $yellow "[ ! ] Installing Apktool "
-sleep 2
+sleep 1
 echo -e $green ""
 sudo apt-get install apktool -y
 clear
@@ -204,13 +205,13 @@ fi
 #check for zipalign
 which zipalign > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-echo -e $LighGreenF "[ ✔ ] Zipalign..........................${LighGreenF}[ found ]"
+echo -e $white "[ ✔ ] Zipalign..........................${red}[ found ]"
 which aapt > /dev/null 2>&1
-sleep 2
+sleep 1
 else
 echo ""
 echo -e $red "[ X ] Zipalign -> ${RedF}not found! "
-sleep 2
+sleep 1
 echo -e $yellow "[ ! ] Installing Zipalign "
 sleep 2
 echo -e $green ""
@@ -219,6 +220,23 @@ clear
 echo -e $blue "[ ✔ ] Done installing .... "
 which zipalign > /dev/null 2>&1
 fi
+}
+# loading bar
+function lading_bar(){
+  echo
+  echo -ne $red' [ ✔ ]Loading....                        [  20% ]\r'
+  sleep 0.5
+  echo -ne $white' [ ✔ ]Loading........                    [  40% ]\r'
+  sleep 0.5
+  echo -ne $red' [ ✔ ]Loading..................          [  60% ]\r'
+  sleep 0.5
+  echo -ne $white' [ ✔ ]Loading..........................  [  80% ]\r'
+  sleep 0.5
+  echo -ne $red' [ ✔ ]Loading............................[  100% ]\r'
+  sleep 0.5
+  echo -ne $red' [ ✔ ]Loading............................[ Done  ]\r'
+  sleep 0.5
+  echo -ne '\n'
 }
 
 # To start service for posrgresql
@@ -233,22 +251,12 @@ function postgresql_stop()
 }
 # Banner for the tool.
 banner() {
-    
-    echo -e "$red"
-    if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing Cyanide-Framework'
-    else
-        figlet Cyanide-Framework
-    fi
-    if ! [ -x "$(command -v toilet)" ]; then
-        echo -e "\e[4;34m This Framework Was Created By \e[1;32mCyanide \e[0m"
-    # else
-    #     echo -e "\e[1;34mCreated By \e[1;34m"
-    #     toilet -f mono12 -F border Cyanide-Framework
-    fi
-    echo -e $red "   For Any Queries Join Me!!!\e[0m"
-    echo -e $white  "Telegram : https://bit.ly/365XS2N \e[0m"
-    echo -e $white  "YouTube  : https://bit.ly/35YqryS \e[0m"
+
+    echo -e $white "  ╔──────────────────────────────────────────╗"
+    echo -e $red "  |        For Any Queries Join Me!!!        |"
+    echo -e $white"   |     Telegram : https://bit.ly/365XS2N    |"
+    echo -e $red"   |     YouTube  : https://bit.ly/35YqryS    |"
+    echo -e $white "  ┖──────────────────────────────────────────┙"
     echo " "
 
 }
@@ -257,13 +265,15 @@ banner() {
 trap ctrl_c INT
 ctrl_c() {
 clear
-echo -e $red"[*] (Ctrl + C ) Detected, Trying To Exit... "
-echo -e $red"[*] Stopping Services... "
+echo -e $red"\t[ℂ] Ctrl + C Detected, Trying To Exit... "
+echo -e $red"\n\t\t[ℂ] Stopping Services... "
 postgresql_stop
 sleep 1
 echo ""
-echo -e $yellow"[*] Thanks For Using Cyanide-Framework  :)"
+echo -e $white"\t[ℂ] Thanks For Using Cyanide-Framework  :)"
 echo ""
+banner
+sleep 0.5
 exit
 }
 #hash encoder
@@ -280,7 +290,7 @@ generator(){
     generator
     ;;
     N|n)
-    echo -e $green "!! Taking you to the main menu !!"
+    echo -e $white "!! Taking you to the main menu !!"
     sleep 1.5
     main
 
@@ -292,17 +302,17 @@ generator(){
     esac
     }
   echo -e $red "[ 1  ] Base64"
-  echo -e $red "[ 2  ] MD5"
+  echo -e $white "[ 2  ] MD5"
   echo -e $red "[ 3  ] ROT5"
-  echo -e $red "[ 4  ] ROT13"
+  echo -e $white "[ 4  ] ROT13"
   echo -e $red "[ 5  ] SHA256"
-  echo -e $red "[ 6  ] SHA384"
+  echo -e $white "[ 6  ] SHA384"
   echo -e $red "[ 7  ] SHA512"
-  echo -e $red "[ 8  ] Vigenere"
+  echo -e $white "[ 8  ] Vigenere"
   echo ""
-  echo -e $CyanF "[ 99 ] Return to main menu" 
+  echo -e $red "[ 99 ] Return to main menu" 
   echo -e $red    "..............................."
-  echo -e $yellow " Please select your option:"
+  echo -e $white " Please select your option:"
   echo ""
   read -p " [ → ] Enter choice> : " number_option
   echo ""
@@ -457,56 +467,56 @@ hash_decoder(){
   # Payload Generator
   payload_generator(){
     echo -e $red " 1. Android               3. Windows"
-    echo -e $red " 2. Linux                 4. MAC"
+    echo -e $white " 2. Linux                 4. MAC"
     echo -e $red " 5. PHP                   6. JSP"
-    echo -e $red " 7. WAR                   8. BASH"
+    echo -e $white " 7. WAR                   8. BASH"
     echo -e $red " 9. Python               10. Perl"
-    echo -e $red "11. Linux Shell          12. Windows Shell"
+    echo -e $white "11. Linux Shell          12. Windows Shell"
     echo -e $red "13. Mac Shell"
-    echo -e $red    "..............................."
-    echo -e $yellow "Please select the Payload Type:"
+    echo ""
+    echo -e $white "Please select the Payload Type:"
 
     #Checking User Input
     re='[a-zA-Z]'
-    echo -e $GreenF "..............................."
+    echo -e $red "[ℂ]....................................[ℂ]"
     read -p " Select Payload : " Number
     if [ $Number -gt 13 ] || [ $Number -lt 1 ] || [[ "$Number" =~ $re ]];
       then
-      echo -e $red    "[ x ].......................................[ x ]"
+      echo -e $red    "[ℂ].......................................[ℂ]"
       echo -e $RedF "You choose invalid option Please try again."
-      echo -e $yellow "[*] Thanks For using Cyanide-Framework  :)"
+      echo -e $yellow "[ℂ] Thanks For using Cyanide-Framework  :)[ℂ]"
       sleep 0.02
       exit 1   
     fi
-    echo -e $blue "[*]....................................[*]"
+    echo -e $blue "[ℂ]....................................[ℂ]"
     echo " Do you want to use your default local host?"
     read -p " Yes?No : " lhost
     case $lhost in
     yes|Yes|YES|Y|y)
-    echo -e $GreenF "[*]....................................[*]"
+    echo -e $GreenF "[ℂ]....................................[ℂ]"
     echo " Grabbing you default Local Host."
     sleep 0.05
     lhost=$(hostname -I)
     ;;
 
     NO|No|N|n|no)
-    echo -e $GreenF "[*]....................................[*]"
+    echo -e $GreenF "[ℂ]....................................[ℂ]"
     echo -e $blue "Please enter your Local Host"
     read -p " Enter Lhost : " lhost
     ;;
     esac
-    echo -e $GreenF "[*]....................................[*]"
+    echo -e $GreenF "[ℂ]....................................[ℂ]"
     echo " Your local host is= $lhost"
-    echo -e $GreenF "[*]....................................[*]"
+    echo -e $GreenF "[ℂ]....................................[ℂ]"
     echo -e $blue "Enter your Local Port"
     read -p " Enter Lport : " lport
-    echo -e $GreenF "[*]....................................[*]"
+    echo -e $GreenF "[ℂ]....................................[ℂ]"
     echo " Please enter the name of the file without extension like (.apk/.exe/.sh)"
     read -p " Filename : " filename
 
     case $Number in 
      Android|android|1) 
-      echo -e $GreenF "[*]....................................[*]"
+      echo -e $red "[ℂ]....................................[ℂ]"
       echo " Please wait we are generating the payload"
       echo -e $GreenF "[ ✔ ]....................................[ ✔ ]"
       echo " Here your Local host is $lhost"
@@ -593,11 +603,11 @@ hash_decoder(){
       ;;
 
       *)
-        echo -e $RedF "[x]................................................[x]"
-        echo " You have choosen a wrong option Please choose a wite keyword"
+        echo -e $RedF "[ℂ]................................................[ℂ]"
+        echo -e $white " You have choosen a wrong option Please choose a wite keyword"
     esac
-    echo -e $GreenF "[*]................................[*]"
-    echo " Do you want to open msfconsole?"
+    echo -e $red "[ℂ]................................[ℂ]"
+    echo -e $white  " Do you want to open msfconsole?"
     read -p " Yes/No? " answer
 
 
@@ -609,12 +619,12 @@ hash_decoder(){
      xterm -T "CYANIDE MULTI/HANDLER" -fa monaco -fs 10 -bg black -e "msfconsole -x 'use multi/handler; set LHOST $lhost; set LPORT $lport; set PAYLOAD $payload; exploit'"
     elif [[ $answer == "NO" ||  $answer == "No" ||  $answer == "no" ||  $answer == "N" ||  $answer == "n" ]]; then
      echo -e $GreenF "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-     echo "[ X ]   Thanks for using Cyanide Framework   [ X ]"
+     echo "[ℂ]   Thanks for using Cyanide Framework   [ℂ]"
 
     else
-     echo -e $RedF "[ X ]....................................[ X ]"
-     echo -e $RedF "[ X ]   Wrong option please try again    [ X ]"
-     echo -e $RedF "[ X ]....................................[ X ]"
+     echo -e $RedF "[ℂ]....................................[ℂ]"
+     echo -e $RedF "【X】   Wrong option please try again   【X】"
+     echo -e $RedF "[ℂ]....................................[ℂ]"
     fi
 }
 main(){
@@ -623,27 +633,28 @@ main(){
   # check_os
   # check_dependencies
   # sleep 0.25
-  # banner
+clear
+banner
 
 
-echo -e $red "             ..,;:ccccccc:;..."
-echo -e $red "          ..,clllc:;;;;;;:cllc,."
-echo -e $red "         .,cllc,..............';;'."
-echo -e $red "        .;lol;......${white}_______${red}....;lol;."
-echo -e $red "       .,lol;......${white}/ _____/${red}.....;lol;..  "
-echo -e $red "       .coo.......${white}/ /${red}.............coo"            
-echo -e $red "      .'lol,.....${white}/ /${red}............'lol,."
-echo -e $red "      .,lol,....${white}/ /_____${red}........,lol,."
-echo -e $red "      .,lol,....${white}\______/${red}.......,lol,."
-echo -e $red "       .:ooc'.................:ooc'"
-echo -e $red "        .'cllc'............''cllc."
-echo -e $white "╔──────────────────────────────────────────╗"
-echo -e $red "|        Cyanide Framework v0.2            |"
-echo -e $white"【X】   Tool For Penetration Testing     【X】"
-echo -e $red" |     Made By: Cyanide and Dboidembla      |"
-echo -e $white "┖──────────────────────────────────────────┙"
+echo -e $red "               ..,;:ccccccc:;..."
+echo -e $red "            ..,clllc:;;;;;;:cllc,."
+echo -e $red "           .,cllc,..............';;'."
+echo -e $red "          .;lol;......${white}_______${red}....;lol;."
+echo -e $red "         .,lol;......${white}/ _____/${red}.....;lol;..  "
+echo -e $red "         .coo.......${white}/ /${red}.............coo"            
+echo -e $red "        .'lol,.....${white}/ /${red}............'lol,."
+echo -e $red "        .,lol,....${white}/ /_____${red}........,lol,."
+echo -e $red "        .,lol,....${white}\______/${red}.......,lol,."
+echo -e $red "         .:ooc'.................:ooc'"
+echo -e $red "          .'cllc'............''cllc."
+echo -e $white "  ╔──────────────────────────────────────────╗"
+echo -e $red "  |        Cyanide Framework v0.2            |"
+echo -e $white"  【X】   Tool For Penetration Testing     【X】"
+echo -e $red"   |     Made By: Cyanide and Dboidembla      |"
+echo -e $white "  ┖──────────────────────────────────────────┙"
   
-  echo -e $white "    [ 1  ] Network Based Attacks"
+  echo -e $white "    [ 1  ] Info_Gathering & Network"
   echo -e $red "    [ 2  ] Web Based Attacks"
   echo -e $white "    [ 3  ] Keylogger"
   echo -e $red "    [ 4  ] Payload Genetator"
@@ -652,39 +663,25 @@ echo -e $white "┖────────────────────�
   echo -e $white "    [ 7  ] TBomb"
   echo -e $red "    [ 8  ] Hash & Cipher Generator"
   echo -e $white "    [ 9  ] Hash & Cipher Decoder"
-  echo -e $red "    [ 10 ] IP Locator"
+  echo -e $red "    [ 10 ] Phishing"
+  # echo -e $red "    [ 10 ] IP Locator"
+  echo -e $white "    [ 11 ] Schedule whatsapp message"
   echo ""
-  echo -e $white "    [ q ] Quit" 
+  echo -e $red "    [ q ] Quit" 
 
 cases_of_framework
 }
-# function of option 1(Network Based)
-cases_of_networks(){
-  echo -e $red " 【X】....................................【X】"
-  echo -e $white " [ 1 ] Mac_changer"
-  echo -e $red " [ 2 ] Wireless_hacking"
-  echo -e $white " [ 3 ] TBomb"
-  echo ""
-  echo -e $red  " [ 99 ] Return to main menu"
-  echo
-  read -p  "  [ → ] Enter Choice> : " number_option
-  case $number_option in
-    1)
-    python3 mac_changer.py
-    exit
-    ;;
-    99) clear
-        sleep 1
-        main
-        ;;
-    *) echo -e $red "【X】 Invalid option, please write a valid number【X】"
-       echo
-       sleep 1
-       clear
-       cases_of_networks
-    ;;
-  esac
+# function of option 1(Network and info)
+netinfo(){
+  clear
+  sudo python2 networking_and_infogather/netinfo.py
+# function of option 1(Web Based)
 }
+web(){
+  clear
+  sudo python2 web/webbased.py
+}
+
 # cases of option 6(infectious)
 cases_of_infectious(){
   echo -e $white " 【X】....................................【X】"
@@ -718,14 +715,14 @@ cases_of_framework(){
   read -p  "     [ → ] Enter Choice > : " Number
 case $Number in 
  Network|network|N|n|1) 
-  clear
   sleep 0.25
-  cases_of_networks
-
+  netinfo
   ;;
 
   Web|web|W|w|2)
-  echo "sachin is your father"
+  sleep 0.25
+  web
+  main
   ;;
  
   Keylogger|keylogger|K|k|3)
@@ -753,8 +750,8 @@ case $Number in
   ;;
 
   TBomb|tbomb|T|t|7)
-  python3 bomber.py
-    exit
+  sudo python2 tbomb/tbomb.py
+  main
   ;;
 
   Generator|generator|G|g|8)
@@ -768,28 +765,33 @@ case $Number in
   clear
   sleep 0.25
   hash_decoder
-    exit
+  main
   ;;
  
-  IP|ip|10)  python3 phoneTracker.py
-              ;;
+  IP|ip|10)  python2 phishing/phishing.py
+  main
+  ;;
+
+  whatsapp|w|11) python3 whatsapp/whatsapp_schedule.py
+  main
+  ;;
 
   q)  echo ""
-       echo -e $red "               Quiting"
+       echo -e $white"     [ℂ] Trying To Exit... "
        sleep 2
-       echo ""
-       echo -e $white "    Thanks for using Cyanide-Framework"
-       echo ""
-       echo -e $red "    Good Bye !!"  
-       apache_svc_stop
+       echo -e $red"\n     [ℂ] Stopping Services... " 
        postgresql_stop
-       echo
-       exit 0 
+       sleep 1
+       echo ""
+       echo -e $white"     [ℂ] Thanks For Using Cyanide-Framework  :)"
+       echo ""
+       sleep 0.5
+       exit 
        ;;
-  *)  echo -e $red    "【X】.......................................【X】"
-      echo -e $RedF "Oops! You have selected an invalid option."
+  *)  
+      echo -e $RedF "【X】Oops! You have selected an invalid option 【X】"
       echo ""
-      echo -e $yellow "[*] Please select a valid option :)"
+      echo -e $yellow "【X】 Please select a valid option 【X】"
       echo ""
       sleep 2
       clear
