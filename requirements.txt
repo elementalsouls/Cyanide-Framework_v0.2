@@ -8,6 +8,6 @@ urllib3
 colorama
 threaded
 multithreading
-PyBluez
 configparser
 pywhatkit
+PyBluez
