@@ -186,6 +186,7 @@ def main():
             return_fw()
 
         else:
+            print(color.RED+"\n\tWrong input! Try Again")
             main()
 
     except KeyboardInterrupt:
