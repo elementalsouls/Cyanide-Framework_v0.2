@@ -163,32 +163,43 @@ def main():
     try:
         if response == "1":
             clearScr()
-            # os.system("sudo python3 wireless/tweak.py")
-            print(color.RED+"\n\tComming Soon")
-            time.sleep(1.5)
+            hiddeneye()
             main()
-
 
         elif response == "2":
             clearScr()
-            fluxion()
+            blackeye()
+            main()
 
         elif response == "3":
             clearScr()
-            os.system("python3 wireless/bt_scan.py")
+            socialphish()
+            main()
 
         elif response == "4":
             clearScr()
-            airgeddon()
-
-        elif response == "99":
+            AdvPhishing()
+            main()
+        elif response == "5":
             clearScr()
-            return_fw()
-
-        else:
-            print(color.RED+"\n\tWrong input! Try Again")
+            zphisher()
             main()
 
+        elif response == "6":
+            clearScr()
+            nexphisher()
+            main()
+        elif response == "99":
+            print("\n\t Returning to main-menu")
+            return_fw()
+            # bashCommand = "clear;. ./cyanide-framework.sh;main"
+            # output = subprocess.call(['bash','-c', bashCommand])
+
+
+        else:
+            self.menu(target)
     except KeyboardInterrupt:
-        main()
+        self.menu(target)
+
+
 main()
