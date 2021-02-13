@@ -4,7 +4,6 @@ import os
 import ConfigParser
 import time
 from time import gmtime, strftime, sleep
-import lib
 import subprocess
 
 class color:
