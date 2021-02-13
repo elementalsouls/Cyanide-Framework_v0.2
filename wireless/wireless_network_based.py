@@ -153,17 +153,20 @@ class airgeddon:
 def main():
     clearScr()
     logo()
-    print(color.WHITE + " [ 1  ] Brute-Force Wi-Fi ")
+    print(color.WHITE + " [ 1  ] Brute-Force Wi-Fi(Comming Soon) ")
     print(color.RED + " [ 2  ] Fluxion")
     print(color.WHITE + " [ 3  ] Bluetooth Scanner")
     print(color.RED + " [ 4  ] Airgeddon")
-    print(color.WHITE + " [ 99 ] Back To Framework")
+    print(color.WHITE + "\n [ 99 ] Back To Framework")
 
     response = raw_input(color.RED +"\n Select your option : ")
     try:
         if response == "1":
             clearScr()
-            os.system("sudo python3 wireless/tweak.py")
+            # os.system("sudo python3 wireless/tweak.py")
+            print(color.RED+"\n\tComming Soon")
+            time.sleep(1.5)
+            main()
 
 
         elif response == "2":
