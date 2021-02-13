@@ -10,3 +10,4 @@ threaded
 multithreading
 PyBluez
 configparser
+pywhatkit
