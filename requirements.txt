@@ -10,5 +10,6 @@ threaded
 multithreading
 configparser
 pywhatkit
-pgep
+pgrep
+pyngrok
 PyBluez
