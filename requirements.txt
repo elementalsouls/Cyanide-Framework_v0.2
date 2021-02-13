@@ -2,7 +2,6 @@ subprocess.run
 times
 readline
 python-time
-lib
 requests
 regex
 urllib3
