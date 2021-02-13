@@ -773,12 +773,12 @@ case $Number in
   main
   ;;
  
-  IP|ip|10)  python2 phishing/phishing.py
+  IP|ip|10)  sudo python2 phishing/phishing.py
   main
   ;;
 
-  whatsapp|w|11) python3 whatsapp/whatsapp_schedule.py
-  main
+  whatsapp|w|11) sudo python3 whatsapp/whatsapp_schedule.py
+  # main
   ;;
 
   q)  echo ""
