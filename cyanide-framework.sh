@@ -691,13 +691,11 @@ web(){
 
 # cases of option 6(infectious)
 cases_of_infectious(){
-  echo -e $white " 【X】....................................【X】"
-  echo -e $red " [ 1 ] Android"
-  echo -e $white " [ 2 ] "
-  echo -e $red " [ 3 ] "
+  echo -e $white " "
+  echo -e $red " [ 1 ] Make Android fud"
   echo ""
   echo -e $white  " [ 99 ] Return to main menu"
-  read -p "  [ → ] Enter choice> : " number_option
+  read -p "\n  [ → ] Enter choice> : " number_option
  case $number_option in
     1)
     clear
