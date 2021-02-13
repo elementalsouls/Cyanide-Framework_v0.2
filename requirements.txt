@@ -1,0 +1,13 @@
+subprocess.run
+times
+readline
+python-time
+lib
+requests
+regex
+urllib3
+colorama
+threaded
+multithreading
+PyBluez
+configparser
