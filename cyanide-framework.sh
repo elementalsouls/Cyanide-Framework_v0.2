@@ -769,7 +769,7 @@ case $Number in
   clear
   sleep 0.25
   hash_decoder
-  main
+#   main
   ;;
  
   IP|ip|10)  sudo python2 phishing/phishing.py
