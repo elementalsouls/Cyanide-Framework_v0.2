@@ -458,7 +458,7 @@ def main():
 
         elif response == "2":
             clearScr()
-            os.system("sudo python3 crawler2.0.py")
+            os.system("sudo python3 web/crawler2.0.py")
 
         elif response == "3":
             clearScr()
