@@ -11,6 +11,7 @@ else
 	pip2 install configparser
 
 fi
+touch ~/.Xauthority
 
 clear
 
