@@ -738,6 +738,7 @@ case $Number in
   ;;
 
   Payload|payload|P|p|4)
+  clear
   payload_generator
   ;;
   
