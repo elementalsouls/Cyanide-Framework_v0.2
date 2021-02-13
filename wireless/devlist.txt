@@ -1,0 +1,5 @@
+lo
+eth0
+wlan0
+vmnet1
+vmnet8
