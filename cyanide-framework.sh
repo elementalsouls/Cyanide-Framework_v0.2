@@ -455,7 +455,7 @@ hash_decoder(){
     Y|y)
     sleep 0.25
     clear
-    python3 hashid.py
+    sudo python3 tola_atom/hashid.py
     ;;
     N|n)
     echo -e $white "!! Opening Decoders !!"
