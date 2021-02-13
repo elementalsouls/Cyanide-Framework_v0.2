@@ -185,7 +185,7 @@ class nexphisher():
     def __init__(self):
         self.installDir = toolDir + "nexphisher"
         self.gitRepo = "https://github.com/htr-tech/nexphisher.git"
-        self.return_main()
+        # self.return_main()
         if not self.installed():
             self.install()
             self.run()
@@ -196,7 +196,7 @@ class nexphisher():
         return_fw()        
 
     def installed(self):
-        return (os.path.isfile(installDir+ "tools/nexphisher/nexphisher"))
+        return (os.path.isfile(installDir+ "tools/nexphisher/nexphisher.sh"))
 
     def install(self):
         os.system("git clone --depth=1 %s %s" %
@@ -235,25 +235,31 @@ class main():
         if response == "1":
             clearScr()
             hiddeneye()
+            main()
 
         elif response == "2":
             clearScr()
             blackeye()
+            main()
 
         elif response == "3":
             clearScr()
             socialphish()
+            main()
 
         elif response == "4":
             clearScr()
             AdvPhishing()
+            main()
         elif response == "5":
             clearScr()
             zphisher()
+            main()
 
         elif response == "6":
             clearScr()
             nexphisher()
+            # main()
         elif response == "99":
             print("\n\t Returning to main-menu")
             return_fw()
