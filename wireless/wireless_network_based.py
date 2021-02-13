@@ -74,11 +74,13 @@ class fluxion:
     def install(self):
         os.system("git clone --depth=1 %s %s" %(self.gitRepo, self.installDir))
         os.system("cd %s && chmod u+x fluxion.sh && ./fluxion -i" %self.installDir)
+        os.system("cd %s && bash fluxion.sh" % self.installDir)
 
 
     def run(self):
         clearScr()
         self.menu()
+        os.system("cd %s && bash fluxion.sh" % self.installDir)
 
     def menu(self):
         clearScr()
