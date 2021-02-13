@@ -485,45 +485,45 @@ hash_decoder(){
 
     #Checking User Input
     re='[a-zA-Z]'
-    echo -e $red "[ℂ]....................................[ℂ]"
+    echo -e $red ""
     read -p " Select Payload : " Number
     if [ $Number -gt 13 ] || [ $Number -lt 1 ] || [[ "$Number" =~ $re ]];
       then
-      echo -e $red    "[ℂ].......................................[ℂ]"
+      echo -e $red    ""
       echo -e $RedF "You choose invalid option Please try again."
       echo -e $yellow "[ℂ] Thanks For using Cyanide-Framework  :)[ℂ]"
       sleep 0.02
       exit 1   
     fi
-    echo -e $blue "[ℂ]....................................[ℂ]"
+    echo -e $blue ""
     echo " Do you want to use your default local host?"
     read -p " Yes?No : " lhost
     case $lhost in
     yes|Yes|YES|Y|y)
-    echo -e $GreenF "[ℂ]....................................[ℂ]"
+    echo -e $GreenF ""
     echo " Grabbing you default Local Host."
     sleep 0.05
     lhost=$(hostname -I)
     ;;
 
     NO|No|N|n|no)
-    echo -e $GreenF "[ℂ]....................................[ℂ]"
+    echo -e $GreenF ""
     echo -e $blue "Please enter your Local Host"
     read -p " Enter Lhost : " lhost
     ;;
     esac
-    echo -e $GreenF "[ℂ]....................................[ℂ]"
+    echo -e $GreenF ""
     echo " Your local host is= $lhost"
-    echo -e $GreenF "[ℂ]....................................[ℂ]"
+    echo -e $GreenF ""
     echo -e $blue "Enter your Local Port"
     read -p " Enter Lport : " lport
-    echo -e $GreenF "[ℂ]....................................[ℂ]"
+    echo -e $GreenF ""
     echo " Please enter the name of the file without extension like (.apk/.exe/.sh)"
     read -p " Filename : " filename
 
     case $Number in 
      Android|android|1) 
-      echo -e $red "[ℂ]....................................[ℂ]"
+      echo -e $red ""
       echo " Please wait we are generating the payload"
       echo -e $GreenF "[ ✔ ]....................................[ ✔ ]"
       echo " Here your Local host is $lhost"
@@ -664,7 +664,7 @@ echo -e $white "  ┖───────────────────�
   echo -e $white "    [ 1  ] Info_Gathering & Network"
   echo -e $red "    [ 2  ] Web Based Attacks"
   echo -e $white "    [ 3  ] Wireless Attacks"
-  echo -e $red "    [ 4  ] Payload Genetator"
+  echo -e $red "    [ 4  ] Lazagne(Comming Soon)"
   echo -e $white "    [ 5  ] Password Attacks"
   echo -e $red "    [ 6  ] Infectious Media Genetator"
   echo -e $white "    [ 7  ] TBomb"
@@ -691,15 +691,22 @@ web(){
 
 # cases of option 6(infectious)
 cases_of_infectious(){
-  echo -e $white " "
+  logo
   echo -e $red " [ 1 ] Make Android fud"
+  echo -e $white  " [ 2 ] Payload Generator"
   echo ""
-  echo -e $white  " [ 99 ] Return to main menu"
-  read -p "\n  [ → ] Enter choice> : " number_option
+  echo -e $red  " [ 99 ] Return to main menu"
+  echo ""
+  read -p "  [ → ] Enter choice> : " number_option
  case $number_option in
     1)
     clear
     bash Evil-Droid/evil-droid.sh
+    ;;
+    2)
+    clear
+    payload_generator
+    main
     ;;
     99) clear
         sleep 0.25
@@ -735,9 +742,12 @@ case $Number in
   sudo python2 wireless/wireless_network_based.py
   ;;
 
-  Payload|payload|P|p|4)
+  Lazagne|lazagne|4)
   clear
-  payload_generator
+  echo ""
+  echo "    Comming Soon"
+  sleep 1
+  main
   ;;
   
   Passwd|passwd|L|l|5)
@@ -762,6 +772,7 @@ case $Number in
   clear
   sleep 0.5
   generator
+  main
 
   ;;
 
@@ -769,7 +780,7 @@ case $Number in
   clear
   sleep 0.25
   hash_decoder
-#   main
+  main
   ;;
  
   IP|ip|10)  sudo python2 phishing/phishing.py
