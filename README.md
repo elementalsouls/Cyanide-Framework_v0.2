@@ -58,7 +58,7 @@ Sachin Sharma (Cyanide)
 - Hash and Cipher Generator
 - Hash and Cipher Decoder
 - Phishing Attacks
-- Scheduled Whatsapp Message
+
 
 
 ### Information Gathering & Networking
@@ -195,16 +195,6 @@ Note: Coming Soon
 
 <p align="center">
   <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/11.png">
-</p>
-
-
-### Schedule WhatsApp Message
-- Schedule a message 
-- see all the messages sent 
-- clear logs 
-
-<p align="center">
-  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/12.png">
 </p>
 
 
