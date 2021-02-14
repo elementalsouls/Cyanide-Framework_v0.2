@@ -3,7 +3,7 @@ Elemental_Souls present you a framework which is suited for everyone in the cybe
 This Framework consists of various sections as explained below with many tools in each section
 
 ## Buy us a Cup of Coffee: 
-<p align="center">
+<p align="left">
 <a href="https://www.paypal.com/paypalme/elementalsouls"><img title="GitHub version" src="https://camo.githubusercontent.com/ae8af018f80649f3d379eb23dbf59acceaffa24e/68747470733a2f2f6c69626572617061792e636f6d2f6173736574732f776964676574732f646f6e6174652e737667"></a>
 </p>
 
@@ -11,6 +11,14 @@ This Framework consists of various sections as explained below with many tools i
 Amritya Vaibhav Dembla (Dboidembla)
 <p align="right">
 <a href="https://in.linkedin.com/in/amritya-vaibhav-dembla"><img title="GitHub version" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+</p>
+<p align="centre">
+<a href="https://github.com/Dboidembla"><img title="GitHub version" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
+
+Sachin Sharmna (Cyanide)
+<p align="right">
+<a href="https://www.linkedin.com/in/sachin-sharma-13297514b/"><img title="GitHub version" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 </p>
 
 
