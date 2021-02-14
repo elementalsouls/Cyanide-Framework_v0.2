@@ -226,8 +226,8 @@ class main():
     print(color.WHITE+"   [ 2  ] Blackeye")
     print(color.RED+"   [ 3  ] SocialPhish")
     print(color.WHITE+"   [ 4  ] AdvPhishing")
-    print(color.RED+"   [ 5  ] zphisher")
-    print(color.WHITE+"   [ 6  ] nexphisher")
+    print(color.RED+"   [ 5  ] Zphisher")
+    print(color.WHITE+"   [ 6  ] Nexphisher")
     print(color.RED+"\n   [ 99  ] Return to main-menu")
 
     response = raw_input("\n   select your option : ")
