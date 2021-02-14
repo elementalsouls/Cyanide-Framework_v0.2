@@ -236,4 +236,5 @@ chmod u+x launcher.sh
 
 ## Legal Disclaimer
 The author does not hold any responsibility for the malicious use of this framework,this framework is only for educational purpose. Our mission is to help educate future Cyber Security Professionals by providing actual hands on experience using this Framework. Our framework is designed to provide future Cyber Security Professionals with the ability to enable their technical education and understanding of various attack vectors, thereby increasing their defensive posture.
+
 The Person who intends to misuse it shall be responsible for his/her actions as per the law.
