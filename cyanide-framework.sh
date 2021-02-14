@@ -7,7 +7,7 @@
 
  # Special Thanks to : Amritya Vaibhav Dembla(Dboidembla)
 
-resize -s 80 100 > /dev/null 
+#resize -s 80 100 > /dev/null 
 
 #Colors
 cyan='\e[0;36m'
