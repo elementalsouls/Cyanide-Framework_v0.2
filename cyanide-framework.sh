@@ -474,12 +474,12 @@ hash_decoder(){
   payload_generator(){
     logo
     echo -e $red " 1. Android               3. Windows"
-    echo -e $white " 2. Linux                 4. MAC"
+    echo -e $white " 2. Linux                 4. MAC OSX"
     echo -e $red " 5. PHP                   6. JSP"
     echo -e $white " 7. WAR                   8. BASH"
     echo -e $red " 9. Python               10. Perl"
     echo -e $white "11. Linux Shell          12. Windows Shell"
-    echo -e $red "13. Mac Shell"
+    echo -e $red "13. Mac OS Shell"
     echo ""
     echo -e $white "Please select the Payload Type:"
 
