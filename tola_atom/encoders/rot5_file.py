@@ -8,7 +8,7 @@ def rot5_cipher(message):
 	return translated
 
 # Encoding
-plaintext = raw_input("Enter the number to be ciphered : ")
+plaintext = input("Enter the number to be ciphered : ")
 ciphertext=rot5_cipher(plaintext)
 print("\nYour Ciphered Text is : %s" %ciphertext)
 
