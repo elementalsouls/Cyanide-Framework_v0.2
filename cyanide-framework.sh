@@ -377,12 +377,12 @@ decoder_main(){
   logo
   echo -e $red "[ 1  ] Base64"
   echo -e $white "[ 2  ] MD5"
-  echo -e $red "[ 3  ] sha1"
+  echo -e $red "[ 3  ] SHA1"
   echo -e $white "[ 4  ] ROT13"
   echo -e $red "[ 5  ] SHA256"
   echo -e $white "[ 6  ] SHA384"
   echo -e $red "[ 7  ] SHA512"
-  echo -e $white "[ 8  ] Vigenere"
+#   echo -e $white "[ 8  ] Vigenere"
   echo ""
   echo -e $red "[ 99 ] Return to main menu" 
   echo -e $red    ""
@@ -424,10 +424,10 @@ decoder_main(){
     python3 tola_atom/decoders/sha512_dec.py
     sleep 1.5
     choice_y/n
-  elif [ $number_option -eq 8 ]; then
-    python3 tola_atom/decoders/vigenere_file.py
-    sleep 1.5
-    choice_y/n
+#   elif [ $number_option -eq 8 ]; then
+#     python3 tola_atom/decoders/vigenere_file.py
+#     sleep 1.5
+#     choice_y/n
   elif [ $number_option -eq 99 ]; then
     clear
     sleep1
