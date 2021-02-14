@@ -1,5 +1,5 @@
 # Cyanide-Framework-v0.2
-ElementalSouls present you a framework which is suited for everyone in the cybersecurity community. This Framework is called The Cynaide Framework
+Elemental_Souls present you a framework which is suited for everyone in the cybersecurity community. This Framework is called The Cynaide Framework
 This Framework consists of various sections as explained below with many tools in each section
 
 ## Buy us a Cup of Coffee: 
@@ -8,17 +8,30 @@ This Framework consists of various sections as explained below with many tools i
 </p>
 
 ## Contact Us:
+### Personal
 Amritya Vaibhav Dembla (Dboidembla)
 <p align="right">
 <a href="https://in.linkedin.com/in/amritya-vaibhav-dembla"><img title="GitHub version" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 </p>
-<p align="centre">
+<p align="right">
 <a href="https://github.com/Dboidembla"><img title="GitHub version" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
-Sachin Sharmna (Cyanide)
+Sachin Sharma (Cyanide)
 <p align="right">
 <a href="https://www.linkedin.com/in/sachin-sharma-13297514b/"><img title="GitHub version" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+</p>
+<p align="right">
+<a href="https://github.com/esJoker"><img title="GitHub version" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
+### Socials
+#### Telegram 
+<p align="right">
+<a href="https://t.me/joinchat/HsAOsH_J-KDehNKx"><img title="GitHub version" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"></a>
+</p>
+#### WhatsApp
+<p align="right">
+<a href="https://chat.whatsapp.com/C6ju8cpoV3O7NYoXtCBYrn"><img title="GitHub version" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 </p>
 
 
