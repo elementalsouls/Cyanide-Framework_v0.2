@@ -80,6 +80,7 @@ Note: Coming Soon
 ### Infectious Media Generator
 - Android FUD
 - Payload Generator (13 Different Type of Payload)
+          
           => Android
           => Linux
           => Windows
