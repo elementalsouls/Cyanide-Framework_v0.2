@@ -1,7 +1,7 @@
 # Cyanide-Framework-v0.2
 Elemental_Souls present you a framework which is suited for everyone in the cybersecurity community. This Framework is called The Cynaide Framework
 This Framework consists of various sections as explained below with many tools in each section
-![](Images/1.jpeg)
+<img src="https://your-image-url.type" width="100" height="100">
 
 ## Buy us a Cup of Coffee: 
 <p align="left">
