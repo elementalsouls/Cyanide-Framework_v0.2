@@ -64,7 +64,7 @@ Note: Use a Wifi-Card
   </a>
 </p>
 
-### Lazagne
+### Lazagne: Password Grabber
 
 Note: Coming Soon
 
@@ -79,7 +79,7 @@ Note: Coming Soon
 
 ### Infectious Media Generator
 - Android FUD
-- Payload Generator
+- Payload Generator (13 Different Type of Payload)
           => Android
           => Linux
           => Windows
