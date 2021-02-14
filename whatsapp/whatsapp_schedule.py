@@ -101,8 +101,8 @@ def user_input_3():
   print(Fore.WHITE+" .:ooc'.................:ooc'")
   print(Fore.RED+"  .'cllc'.............cllc.")
   print(Fore.RED+ " [ 1  ] Schedule a message ")
-  print(Fore.WHITE+ " [ 2  ] see all the messages sent ")
-  print(Fore.RED+ " [ 3  ] clear logs ")
+  print(Fore.WHITE+ " [ 2  ] See all the messages sent ")
+  print(Fore.RED+ " [ 3  ] Clear Logs ")
   print(Fore.WHITE+ "\n [ 99  ] Return to main-menu ")
   choice = int(input(Fore.RED+ "\n [ → ] Enter choice> : "))
 
