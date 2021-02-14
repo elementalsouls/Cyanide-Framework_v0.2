@@ -374,6 +374,29 @@ generator(){
 }
 #decoder main
 decoder_main(){
+  choice2_y/n(){
+    echo "Do you want to generate another cipher?"
+    echo ""
+    read -p "[ → ] Enter choice [Y/n]> : " number_option
+    echo ""
+    case $number_option in
+    Y|y)
+    sleep 1
+    clear
+    decoder_main
+    ;;
+    N|n)
+    echo -e $white "!! Taking you to the main menu !!"
+    sleep 1.5
+    main
+
+    ;;
+    *)
+    echo  -e $red "!!  Wrong choice [ X ] Try again !!"
+    sleep 1.5
+    decoder_main
+    esac
+    }
   logo
   echo -e $red "[ 1  ] Base64"
   echo -e $white "[ 2  ] MD5"
@@ -395,39 +418,39 @@ decoder_main(){
     sleep 1.5
     echo ""
 
-    choice_y/n
+    choice2_y/n
 
   elif [ $number_option -eq 2 ]; then
     python3 tola_atom/decoders/md5_dec.py
     sleep 1.5
     echo ""
 
-    choice_y/n
+    choice2_y/n
 
   elif [ $number_option -eq 3 ]; then
     python3 tola_atom/decoders/sha1_dec.py
     sleep 1.5
-    choice_y/n
+    choice2_y/n
   elif [ $number_option -eq 4 ]; then
     python3 tola_atom/decoders/rot13_dec.py
     sleep 1.5
-    choice_y/n
+    choice2_y/n
   elif [ $number_option -eq 5 ]; then
     python3 tola_atom/decoders/sha256_dec.py
     sleep 1.5
-    choice_y/n
+    choice2_y/n
   elif [ $number_option -eq 6 ]; then
     python3 tola_atom/decoders/sha384_dec.py
     sleep 1.5
-    choice_y/n
+    choice2_y/n
   elif [ $number_option -eq 7 ]; then
     python3 tola_atom/decoders/sha512_dec.py
     sleep 1.5
-    choice_y/n
+    choice2_y/n
 #   elif [ $number_option -eq 8 ]; then
 #     python3 tola_atom/decoders/vigenere_file.py
 #     sleep 1.5
-#     choice_y/n
+#     choice2_y/n
   elif [ $number_option -eq 99 ]; then
     clear
     sleep1
@@ -437,7 +460,7 @@ decoder_main(){
     echo  -e $red "!!  Wrong choice [ X ] Try again !!"
     sleep 1.5
     clear
-    generator
+    decoder_main
 
   fi
 }
