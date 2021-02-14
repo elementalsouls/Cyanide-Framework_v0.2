@@ -283,9 +283,8 @@ exit
 #hash encoder
 generator(){
   choice_y/n(){
-    echo "Do you want to generate another cipher?"
     echo ""
-    read -p "[ → ] Enter choice [Y/n]> : " number_option
+    read -p "[ → ] Do you want to generate another cipher[Y/n]?> : " number_option
     echo ""
     case $number_option in
     Y|y)
@@ -375,9 +374,7 @@ generator(){
 #decoder main
 decoder_main(){
   choice2_y/n(){
-    echo "Do you want to decode another cipher?"
-    echo ""
-    read -p "[ → ] Enter choice [Y/n]> : " number_option
+    read -p "[ → ] Do you want to generate another cipher[Y/n]?" number_option
     echo ""
     case $number_option in
     Y|y)
