@@ -672,7 +672,7 @@ echo -e $white "  ┖───────────────────�
   echo -e $white "    [ 9  ] Hash & Cipher Decoder"
   echo -e $red "    [ 10 ] Phishing Attacks"
   # echo -e $red "    [ 10 ] IP Locator"
-  echo -e $white "    [ 11 ] Schedule whatsapp message"
+  echo -e $white "    [ 11 ] Schedule Whatsapp Message"
   echo ""
   echo -e $red "    [ q ] Quit" 
 
