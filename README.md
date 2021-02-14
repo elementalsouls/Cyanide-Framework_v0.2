@@ -7,6 +7,19 @@ This Framework consists of various sections as explained below with many tools i
   <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/2.png">
 </p>
 
+## It Works On
+
+<p align="center">
+  <a href="https://www.kali.org/news/kali-linux-2020-4-release/">
+    <img width="150px" hspace="10px" src="https://i.imgur.com/yQRrCtC.png" alt="kali linux finalrecon">
+  </a>
+  <a href="https://ubuntu.com/">
+    <img width="150px" hspace="10px" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/download.png" alt="Ubuntu">
+  </a>
+  <a href="https://www.parrotsec.org/">
+    <img width="150px" hspace="10px" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/download1.jpg" alt="ParrotSecOs">
+  </a>
+</p>
 
 ## Buy us a Cup of Coffee: 
 <p align="left">
