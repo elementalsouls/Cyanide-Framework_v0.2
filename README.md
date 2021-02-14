@@ -133,23 +133,29 @@ Note: Coming Soon
 - Android FUD
 - Payload Generator (13 Different Type of Payload)
           
-     => Android
-     => Linux
-     => Windows
-     => MAC
-     => PHP
-     => JSP
-     => WAR
-     => BASH
-     => Python
-     => Perl
-     => Linux Shell
-     => Windows Shell
-     => Mac OSX Shell
+       => Android
+       => Linux
+       => Windows
+       => MAC
+       => PHP
+       => JSP
+       => WAR
+       => BASH
+       => Python
+       => Perl
+       => Linux Shell
+       => Windows Shell
+       => Mac OSX Shell
           
-#![]()
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/6a.png">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/6b.png">
+</p>
 
 ### TBomb
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/8.png">
+</p>
 
 ### Hash & Cipher Generator
 - Base64
@@ -161,7 +167,9 @@ Note: Coming Soon
 - SHA512
 - Vigenere
 
-#![]()
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/9.png">
+</p>
 
 ### Hash & Cipher Decoder
 -Check Cipher Type
@@ -173,8 +181,9 @@ Note: Coming Soon
 - SHA384
 - SHA512
 
-
-#![]()
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/10.png">
+</p>
 
 ### Phishing Attacks
 - HiddenEye
@@ -184,17 +193,19 @@ Note: Coming Soon
 - Zphisher
 - Nexphisher
 
-#![]()
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/11.png">
+</p>
+
 
 ### Schedule WhatsApp Message
 - Schedule a message 
 - see all the messages sent 
 - clear logs 
 
-#![]()
-
-### Note: 
-This framework works for All Debian based Operating Systems as of now.
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/12.png">
+</p>
 
 
 
@@ -222,8 +233,6 @@ python3 -m pip install -r requirements.txt
 chmod u+x launcher.sh
 ./launcher.sh 
 ```
-#![]()
-
 
 ## Legal Disclaimer
 The author does not hold any responsibility for the malicious use of this framework,this framework is only for educational purpose. Our mission is to help educate future Cyber Security Professionals by providing actual hands on experience using this Framework. Our framework is designed to provide future Cyber Security Professionals with the ability to enable their technical education and understanding of various attack vectors, thereby increasing their defensive posture.
