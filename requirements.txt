@@ -22,4 +22,5 @@ requests
 urllib3
 pgrep
 kill
+tqdm
 PyBluez
