@@ -2,7 +2,9 @@
 Elemental_Souls present you a framework which is suited for everyone in the cybersecurity community. This Framework is called The Cynaide Framework
 This Framework consists of various sections as explained below with many tools in each section
 
-<img align="centre" width="350" height="350" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/1.jpeg">
+<p align="center">
+  <img width="300" height="300" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/1.jpeg">
+</p>
 
 
 ## Buy us a Cup of Coffee: 
