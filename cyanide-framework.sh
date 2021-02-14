@@ -692,7 +692,7 @@ echo -e $white "  ┖───────────────────�
   echo -e $white "    [ 9  ] Hash & Cipher Decoder"
   echo -e $red "    [ 10 ] Phishing Attacks"
   # echo -e $red "    [ 10 ] IP Locator"
-  echo -e $white "    [ 11 ] Schedule Whatsapp Message"
+#   echo -e $white "    [ 11 ] Schedule Whatsapp Message"
   echo ""
   echo -e $red "    [ q ] Quit" 
 
@@ -807,9 +807,9 @@ case $Number in
   main
   ;;
 
-  whatsapp|w|11) sudo python3 whatsapp/whatsapp_schedule.py
-  main
-  ;;
+#   whatsapp|w|11) sudo python3 whatsapp/whatsapp_schedule.py
+#   main
+#   ;;
 
   q)  echo ""
        echo -e $white"     [ℂ] Trying To Exit... "
