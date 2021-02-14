@@ -7,7 +7,7 @@ This Framework consists of various sections as explained below with many tools i
   <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/2.png">
 </p>
 
-## It Works On
+## Available On
 
 <p align="center">
   <a href="https://www.kali.org/news/kali-linux-2020-4-release/">
