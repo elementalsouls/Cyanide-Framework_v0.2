@@ -4,6 +4,7 @@ This Framework consists of various sections as explained below with many tools i
 
 <p align="center">
   <img width="300" height="300" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/1.jpeg">
+  <img width="300" height="300" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/2.png">
 </p>
 
 
@@ -45,6 +46,11 @@ Sachin Sharma (Cyanide)
 
 
 ## Menu
+
+<p align="right">
+  <img width="300" height="300" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/1.jpeg">
+</p>
+
 
 - Information Gathering & Networking
 - Web Based Attacks
