@@ -788,7 +788,7 @@ case $Number in
   ;;
 
   whatsapp|w|11) sudo python3 whatsapp/whatsapp_schedule.py
-  # main
+  main
   ;;
 
   q)  echo ""
