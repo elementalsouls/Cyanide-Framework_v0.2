@@ -10,7 +10,7 @@ def rot5_cipher(message):
 # Encoding
 plaintext = input("Enter the number to be ciphered : ")
 ciphertext=rot5_cipher(plaintext)
-print("\nYour Ciphered Text is : %s" %ciphertext)
+print("\nYour Ciphered Text is : %s" %ciphertext +"\n")
 
 plaintext = ""
 plaintext = rot5_cipher(ciphertext) 
