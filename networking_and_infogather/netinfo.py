@@ -347,12 +347,12 @@ class rsploit:
 def main():
     clearScr()
     logo()
-    print(color.RED+"  [ 1  ] nmap")
-    print(color.WHITE+"  [ 2  ] setoolkit")
+    print(color.RED+"  [ 1  ] Nmap")
+    print(color.WHITE+"  [ 2  ] Setoolkit")
     print(color.RED+"  [ 3  ] WPScan")
-    print(color.WHITE+"  [ 4  ] Mac_Changer")
+    print(color.WHITE+"  [ 4  ] MAC_Changer")
     print(color.RED+"  [ 5  ] Crips")
-    print(color.WHITE+"  [ 6  ] Router-Sploit")
+    print(color.WHITE+"  [ 6  ] RouterSploit")
     print(color.WHITE+"\n  [ 99 ] Return to main-Menu \n")
 
     response = raw_input(color.RED+"  select your option : ")
