@@ -306,18 +306,18 @@ generator(){
     esac
     }
   logo
-  echo -e $red "[ 1  ] Base64"
-  echo -e $white "[ 2  ] MD5"
-  echo -e $red "[ 3  ] ROT5"
-  echo -e $white "[ 4  ] ROT13"
-  echo -e $red "[ 5  ] SHA256"
-  echo -e $white "[ 6  ] SHA384"
-  echo -e $red "[ 7  ] SHA512"
-  echo -e $white "[ 8  ] Vigenere"
+  echo -e $red "  [ 1  ] Base64"
+  echo -e $white "  [ 2  ] MD5"
+  echo -e $red "  [ 3  ] ROT5"
+  echo -e $white "  [ 4  ] ROT13"
+  echo -e $red "  [ 5  ] SHA256"
+  echo -e $white "  [ 6  ] SHA384"
+  echo -e $red "  [ 7  ] SHA512"
+  echo -e $white "  [ 8  ] Vigenere"
   echo ""
-  echo -e $red "[ 99 ] Return to main menu" 
-  echo -e $red    "..............................."
-  echo -e $white "Please select your option:"
+  echo -e $red "  [ 99 ] Return to main menu" 
+  echo -e $red    "  ..............................."
+  echo -e $white "  Please select your option:"
   echo ""
   read -p " [ → ] Enter choice> : " number_option
   echo ""
@@ -398,20 +398,20 @@ decoder_main(){
     esac
     }
   logo
-  echo -e $red "[ 1  ] Base64"
-  echo -e $white "[ 2  ] MD5"
-  echo -e $red "[ 3  ] SHA1"
-  echo -e $white "[ 4  ] ROT13"
-  echo -e $red "[ 5  ] SHA256"
-  echo -e $white "[ 6  ] SHA384"
-  echo -e $red "[ 7  ] SHA512"
+  echo -e $red "  [ 1  ] Base64"
+  echo -e $white "  [ 2  ] MD5"
+  echo -e $red "  [ 3  ] SHA1"
+  echo -e $white "  [ 4  ] ROT13"
+  echo -e $red "  [ 5  ] SHA256"
+  echo -e $white "  [ 6  ] SHA384"
+  echo -e $red "  [ 7  ] SHA512"
 #   echo -e $white "[ 8  ] Vigenere"
   echo ""
-  echo -e $red "[ 99 ] Return to main menu" 
+  echo -e $red "  [ 99 ] Return to main menu" 
   echo -e $red    ""
-  echo -e $white "Select your option:"
+  echo -e $white "  Select your option:"
   echo ""
-  read -p "[ → ] Enter choice> : " number_option
+  read -p "  [ → ] Enter choice> : " number_option
   echo ""
   if [ $number_option -eq 1 ]; then
     python3 tola_atom/decoders/base64_dec.py
