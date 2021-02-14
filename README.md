@@ -70,7 +70,9 @@ Sachin Sharma (Cyanide)
 - Crips
 - RouterSploit
 
-#![]()
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/3.png">
+</p>
 
 ### Web Based
 - Nikto
@@ -80,7 +82,9 @@ Sachin Sharma (Cyanide)
 - WPScan
 - JoomScan
 
-#![]()
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/4.png">
+</p>
 
 ### Wireless Attacks
 - Brute-Force Wi-Fi
@@ -88,20 +92,25 @@ Sachin Sharma (Cyanide)
 - Bluetooth Scanner
 - Airgeddon
 
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/7.png">
+</p>
+
+
 Note: Use a Wifi-Card 
 
 <p align="center">
   <a href="https://www.amazon.in/Panda-Wireless-PAU06-300Mbps-Adapter/dp/B00JDVRCI0">
-    <img width="150px" hspace="10px" src="" alt="Panda Pau06">
+    <img width="150px" hspace="10px" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/panda.jpg" alt="Panda Pau06">
   </a>
   <a href="https://www.amazon.in/Panda-Wireless-PAU09-N600-Antennas/dp/B01LY35HGO">
-    <img width="150px" hspace="10px" src="" alt="Panda Pau09">
+    <img width="150px" hspace="10px" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/pau09.jpeg" alt="Panda Pau09">
   </a>
   <a href="https://www.alfa.com.tw/products/awus036nh?variant=36481029374024">
-    <img width="150px" hspace="10px" src="" alt="Alfa AWUS036NH (EOL)">
+    <img width="150px" hspace="10px" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/alpha1.jpeg" alt="Alfa AWUS036NH (EOL)">
   </a>
   <a href="https://www.alfa.com.tw/products/awus1900?variant=36473966231624">
-    <img width="150px" hspace="10px" src="" alt="Alfa AWUS1900">
+    <img width="150px" hspace="10px" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/alpha2.jpeg" alt="Alfa AWUS1900">
   </a>
 </p>
 
@@ -116,25 +125,27 @@ Note: Coming Soon
 - CUPP
 - Hydra
 
-#![]()
+<p align="center">
+  <img width="310" height="310" src="https://github.com/esjoker/Cyanide-Framework_v0.2/blob/main/Images/5.png">
+</p>
 
 ### Infectious Media Generator
 - Android FUD
 - Payload Generator (13 Different Type of Payload)
           
-          => Android
-          => Linux
-          => Windows
-          => MAC
-          => PHP
-          => JSP
-          => WAR
-          => BASH
-          => Python
-          => Perl
-          => Linux Shell
-          => Windows Shell
-          => Mac OSX Shell
+     => Android
+     => Linux
+     => Windows
+     => MAC
+     => PHP
+     => JSP
+     => WAR
+     => BASH
+     => Python
+     => Perl
+     => Linux Shell
+     => Windows Shell
+     => Mac OSX Shell
           
 #![]()
 
