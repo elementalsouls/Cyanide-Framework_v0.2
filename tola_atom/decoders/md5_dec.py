@@ -1,23 +1,22 @@
 import hashlib
+flag = 0
+pass_hash = input("Please Enter the hash you want to crack :")
+pass_file = input("enter the file name :")
+try:
+    pass_file = open(pass_file, "r")
+except:
+    print("No file found")
+    quit()
+for word in pass_file:
+    enc_word = word.encode('utf-8')
 
-count = 1
+    digest = hashlib.md5(enc_word.strip()).hexdigest()
+    print(word)
+    print(digest)
+    print(pass_hash)
+    if digest == pass_hash:
+        print("Password has been found: " + word)
+        break
 
-md5_pass = input("Enter the Hash Text: ")
-md5_file = input("Do you need to give a Custom Dictionary(Y/N): ")
-if (x == "Y") or (x == "Yes") or (x == "YES"):
-    md5_file = input("Enter Wordlist Location: ")
-elif (x == "N") or (x == "No") or (x == "NO"):
-    md5_file = "/usr/share/wordlists/rockyou.txt"
-
-
-
-    for password in md5_file:
-        hash = hashlib.md5(password.strip().encode('utf-8')).hexdigest()
-        print("[*] Trying Password %d ===> %s" % (count,password.strip()))
-        count += 1
-
-        if hash == y:
-            print("Password Found, Password is: %s" % passwords)
-            break
-# else:
-#     print("Password Not Found")
+if flag == 1:
+    print("Password is not in the list")
