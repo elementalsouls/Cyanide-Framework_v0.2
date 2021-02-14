@@ -2,7 +2,7 @@ import hashlib
 flag = 0
 pass_hash = input("Please Enter the hash you want to crack :")
 optn = input("Do you want to Give a Custom Dictionary(Y/n)")
-if (optn=="Y") or (optn=="Yes") or (optn=="YES") or (optn=="yes"):
+if (optn=="Y") or (optn=="y") or (optn=="yes"):
     pass_file = input("enter the file name :")
     try:
         pass_file = open(pass_file, "r")
@@ -19,7 +19,7 @@ if (optn=="Y") or (optn=="Yes") or (optn=="YES") or (optn=="yes"):
         if digest == pass_hash:
             print("Password has been found: " + word)
             break
-elif (optn=="N") or (optn=="No") or (optn=="n") or (optn=="no"):
+elif (optn=="N") or (optn=="n") or (optn=="no"):
     pass_file = "/usr/share/wordlists/rockyou.txt"
     try:
         pass_file = open(pass_file, "r")
