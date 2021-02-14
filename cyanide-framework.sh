@@ -375,7 +375,7 @@ generator(){
 #decoder main
 decoder_main(){
   choice2_y/n(){
-    echo "Do you want to generate another cipher?"
+    echo "Do you want to decode another cipher?"
     echo ""
     read -p "[ → ] Enter choice [Y/n]> : " number_option
     echo ""
