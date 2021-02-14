@@ -214,24 +214,24 @@ Note: Coming Soon
 
 ```
 sudo apt-get update -y
-apt install python3-pip
+sudo apt install python3-pip
 ```
 
 ### Step 2: Downloading the Framework
 
 ```
-git clone https://github.com/esjoker/Cyanide-Framework_v0.2
+sudo git clone https://github.com/esjoker/Cyanide-Framework_v0.2
 cd Cyanide-Framework_v0.2/
 ```
 ### Step 3: Installing Requirements
 
 ```
-python3 -m pip install -r requirements.txt
+sudo python3 -m pip install -r requirements.txt
 ```
 ### Step 4: Starting the Framework
 ```
-chmod u+x launcher.sh
-./launcher.sh 
+sudo chmod u+x launcher.sh
+sudo ./launcher.sh 
 ```
 
 ## Legal Disclaimer
