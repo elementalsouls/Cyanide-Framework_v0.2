@@ -1,5 +1,5 @@
 # Cyanide-Framework-v0.2
-ElementalSouls present you a framework which is suited for everyone in the cybersecurity community. This Framework is called The Cynaide Framework
+ElementalSouls present you a framework which is suited for everyone in the cybersecurity community. This Framework is called The Cyanide Framework
 This Framework consists of various sections as explained below with many tools in each section
 
 <p align="center">
